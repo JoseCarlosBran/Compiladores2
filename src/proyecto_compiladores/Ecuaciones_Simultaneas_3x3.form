@@ -105,10 +105,10 @@
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Component id="C21" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="C11" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="Y" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="X" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="C31" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="Z" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
                   </Group>
@@ -122,11 +122,11 @@
               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="C11" min="-2" max="-2" attributes="0"/>
+                      <Component id="X" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="C21" min="-2" max="-2" attributes="0"/>
+                      <Component id="Y" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="C31" min="-2" max="-2" attributes="0"/>
+                      <Component id="Z" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="B13" min="-2" max="-2" attributes="0"/>
@@ -214,9 +214,9 @@
     </Component>
     <Component class="javax.swing.JTextField" name="B21">
     </Component>
-    <Component class="javax.swing.JTextField" name="C11">
+    <Component class="javax.swing.JTextField" name="X">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="C11ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="XActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="A11">
@@ -224,11 +224,11 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="A11ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="C21">
+    <Component class="javax.swing.JTextField" name="Y">
     </Component>
     <Component class="javax.swing.JTextField" name="A12">
     </Component>
-    <Component class="javax.swing.JTextField" name="C31">
+    <Component class="javax.swing.JTextField" name="Z">
     </Component>
     <Component class="javax.swing.JTextField" name="A32">
     </Component>

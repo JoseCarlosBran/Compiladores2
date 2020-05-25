@@ -33,11 +33,11 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
         B12 = new javax.swing.JTextField();
         B22 = new javax.swing.JTextField();
         B21 = new javax.swing.JTextField();
-        C11 = new javax.swing.JTextField();
+        X = new javax.swing.JTextField();
         A11 = new javax.swing.JTextField();
-        C21 = new javax.swing.JTextField();
+        Y = new javax.swing.JTextField();
         A12 = new javax.swing.JTextField();
-        C31 = new javax.swing.JTextField();
+        Z = new javax.swing.JTextField();
         A32 = new javax.swing.JTextField();
         A31 = new javax.swing.JTextField();
         B32 = new javax.swing.JTextField();
@@ -65,9 +65,9 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
             }
         });
 
-        C11.addActionListener(new java.awt.event.ActionListener() {
+        X.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                C11ActionPerformed(evt);
+                XActionPerformed(evt);
             }
         });
 
@@ -148,9 +148,9 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
                         .addGap(48, 48, 48)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(C21, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(C11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(C31, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Y, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(X, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Z, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(146, 146, 146))))
         );
         layout.setVerticalGroup(
@@ -159,11 +159,11 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(C11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(X, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(C21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Y, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(C31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Z, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(B13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -225,9 +225,9 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_B11ActionPerformed
 
-    private void C11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C11ActionPerformed
+    private void XActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_C11ActionPerformed
+    }//GEN-LAST:event_XActionPerformed
 
     private void A11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A11ActionPerformed
         // TODO add your handling code here:
@@ -296,9 +296,9 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
     private javax.swing.JTextField B32;
     private javax.swing.JTextField B33;
     private javax.swing.JTextField B34;
-    private javax.swing.JTextField C11;
-    private javax.swing.JTextField C21;
-    private javax.swing.JTextField C31;
+    private javax.swing.JTextField X;
+    private javax.swing.JTextField Y;
+    private javax.swing.JTextField Z;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
