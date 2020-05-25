@@ -519,15 +519,13 @@ public class Procedimientos {
     //Procedimiento para la Suma de matrices de 2x2
     public void MATRIZ_INVERSA(JTextField A11, JTextField A12, JTextField A21, JTextField A22, JTextField B11, JTextField B12, JTextField B21, JTextField B22, JTextField Determinante, JTextArea Mensaje) throws InterruptedException{
         //Declarar la Matriz A
-        float[][] matriz1 = new float[2][2];
-        //Declarar la Matriz B
-        float[][] matriz2 = new float[2][2];
-        //Declarar la Matriz Resultante
-        float[][] matrizR = new float[2][2];
+        float[][] matriz1 = new float[4][4];
+      
         
         float [][] det= new float[50][50];	// Vector para guardar los valores de la matriz ingresada, pero conforme el proceso de va modificando
 	float determinante;	// Variable para guardar el valor de la determinante
 	int m;						// Variable auxiliar para la determinante
+        float elem;					// Variable auxiliar para realizar la matriz inversa
 	        
 
         //Asignar valores
@@ -535,10 +533,7 @@ public class Procedimientos {
         matriz1[0][1]=Float.parseFloat(A12.getText());
         matriz1[1][0]=Float.parseFloat(A21.getText());
         matriz1[1][1]=Float.parseFloat(A22.getText());
-        matriz2[0][0]=Float.parseFloat(B11.getText());
-        matriz2[0][1]=Float.parseFloat(B12.getText());
-        matriz2[1][0]=Float.parseFloat(B21.getText());
-        matriz2[1][1]=Float.parseFloat(B22.getText());
+        
         
         for(int i=0; i<2; i++)
             {
@@ -566,15 +561,110 @@ public class Procedimientos {
                 }
         Determinante.setText(Float.toString(determinante)); //Setea el valor en el respectivo espacio al que pertenence
         
-        if(determinante!=0){
+        if(determinante==0){
+            Mensaje.append("El determinante de la matriz es 0");//Envio de informacion a la ventana donde mostraremos la solucion
+            Mensaje.append(System.getProperty("line.separator"));
+            Mensaje.append("La matriz Ingresada, No tiene matriz Inversa.");//Envio de informacion a la ventana donde mostraremos la solucion
+            Mensaje.append(System.getProperty("line.separator"));
             
         }
+        if(determinante!=0){
+            
+        // Proceso para hacer la matriz identidad junto a la matriz
+            for (int i=0; i<2; i++)
+		{
+		for(int j=2; j<2*2; j++)
+                    {
+                    if (i==(j-2))
+			{
+			matriz1[i][j]=1;
+			}
+                    else {
+			matriz1[i][j]=0;
+                        }
+                    }
+		}
+            B11.setText(Float.toString(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
+            B12.setText(Float.toString(matriz1[0][3])); //Setea el valor en el respectivo espacio al que pertenence
+            B21.setText(Float.toString(matriz1[1][2])); //Setea el valor en el respectivo espacio al que pertenence
+            B22.setText(Float.toString(matriz1[1][3])); //Setea el valor en el respectivo espacio al que pertenence
+            Mensaje.append("Generamos los valores de la matriz Inversa y los Seteamos");//Envio de informacion a la ventana donde mostraremos la solucion
+            Mensaje.append(System.getProperty("line.separator"));
+            Mensaje.append(System.getProperty("line.separator"));
+            Mensaje.append("Para Encontrar la Matriz Inversa");//Envio de informacion a la ventana donde mostraremos la solucion
+            Mensaje.append(System.getProperty("line.separator"));
+            Mensaje.append("Lo hacemos por el metodo de Gauss Jordan");//Envio de informacion a la ventana donde mostraremos la solucion
+            Mensaje.append(System.getProperty("line.separator"));
+            Mensaje.append("Tenemos las siguientes Operaciones de Fila");//Envio de informacion a la ventana donde mostraremos la solucion
+            Mensaje.append(System.getProperty("line.separator"));
+            Mensaje.append("Multiplicar una fila por un número distinto de 0.");//Envio de informacion a la ventana donde mostraremos la solucion
+            Mensaje.append(System.getProperty("line.separator"));
+            Mensaje.append("Sumar (o restar) a una fila, el múltiplo de otra fila.");//Envio de informacion a la ventana donde mostraremos la solucion
+            Mensaje.append(System.getProperty("line.separator"));
+            Mensaje.append("Intercambiar el orden de las filas.");//Envio de informacion a la ventana donde mostraremos la solucion
+            Mensaje.append(System.getProperty("line.separator"));
+            Mensaje.append(System.getProperty("line.separator"));
+            Mensaje.append("Realizamos las operaciones de fila que tenemos a nuestro alcance");//Envio de informacion a la ventana donde mostraremos la solucion
+            Mensaje.append(System.getProperty("line.separator"));
+            Mensaje.append("Con tal, que nuestra Matriz Original, quede como la matriz identidad.");//Envio de informacion a la ventana donde mostraremos la solucion
+            Mensaje.append(System.getProperty("line.separator"));
+            
+	// Proceso para hace la matriz que ingresamos una identidad y la identidad hacerla matriz inversa
+            for(int i=0; i<2; i++)
+		{
+		elem=matriz1[i][i];
+		for(int j=0; j<2*2; j++)
+                    {
+                    matriz1[i][j]=matriz1[i][j]/elem;
+                    }
+                Mensaje.append("Convertimos en 1 el elemento en la diagonal");//Envio de informacion a la ventana donde mostraremos la solucion
+                Mensaje.append(System.getProperty("line.separator"));
+                A11.setText(Float.toString(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
+                A12.setText(Float.toString(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
+                A21.setText(Float.toString(matriz1[1][0])); //Setea el valor en el respectivo espacio al que pertenence
+                A22.setText(Float.toString(matriz1[1][1])); //Setea el valor en el respectivo espacio al que pertenence
+                B11.setText(Float.toString(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
+                B12.setText(Float.toString(matriz1[0][3])); //Setea el valor en el respectivo espacio al que pertenence
+                B21.setText(Float.toString(matriz1[1][2])); //Setea el valor en el respectivo espacio al que pertenence
+                B22.setText(Float.toString(matriz1[1][3])); //Setea el valor en el respectivo espacio al que pertenence
+
+		for(int x=0; x<2; x++)
+                    {
+                    if(x!=i)
+                        {
+			elem=matriz1[x][i];
+			for(int j=0; j<2*2; j++)
+                            {
+                            matriz1[x][j]=matriz1[x][j]-(elem*matriz1[i][j]);
+                            }
+			}
+                    }
+                Mensaje.append("Convertimos en 0 el elemento que No esta en la diagonal");//Envio de informacion a la ventana donde mostraremos la solucion
+                Mensaje.append(System.getProperty("line.separator"));
+                A11.setText(Float.toString(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
+                A12.setText(Float.toString(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
+                A21.setText(Float.toString(matriz1[1][0])); //Setea el valor en el respectivo espacio al que pertenence
+                A22.setText(Float.toString(matriz1[1][1])); //Setea el valor en el respectivo espacio al que pertenence
+                B11.setText(Float.toString(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
+                B12.setText(Float.toString(matriz1[0][3])); //Setea el valor en el respectivo espacio al que pertenence
+                B21.setText(Float.toString(matriz1[1][2])); //Setea el valor en el respectivo espacio al que pertenence
+                B22.setText(Float.toString(matriz1[1][3])); //Setea el valor en el respectivo espacio al que pertenence
+		}
         
-		    
-        
-        
-        
-        
+	//Imprimir la matriz Inversa
+                Mensaje.append(System.getProperty("line.separator"));
+                Mensaje.append("Asi es como nos quedara nuestra Matriz Inversa Resuelta");//Envio de informacion a la ventana donde mostraremos la solucion
+                Mensaje.append(System.getProperty("line.separator"));
+                A11.setText(Float.toString(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
+                A12.setText(Float.toString(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
+                A21.setText(Float.toString(matriz1[1][0])); //Setea el valor en el respectivo espacio al que pertenence
+                A22.setText(Float.toString(matriz1[1][1])); //Setea el valor en el respectivo espacio al que pertenence
+                B11.setText(Float.toString(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
+                B12.setText(Float.toString(matriz1[0][3])); //Setea el valor en el respectivo espacio al que pertenence
+                B21.setText(Float.toString(matriz1[1][2])); //Setea el valor en el respectivo espacio al que pertenence
+                B22.setText(Float.toString(matriz1[1][3])); //Setea el valor en el respectivo espacio al que pertenence
+
+        }
     }
     
     
