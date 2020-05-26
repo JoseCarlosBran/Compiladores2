@@ -979,7 +979,7 @@ public class Procedimientos {
     
     
     //Procedimiento para la Matriz Inversa de 3x3
-    public void ECUACION_SIMULTANEA_MATRIZ_INVERSA(JTextField A11, JTextField A12, JTextField A13, JTextField A14, JTextField A21, JTextField A22, JTextField A23, JTextField A24, JTextField A31, JTextField A32, JTextField A33, JTextField A34, JTextField B11, JTextField B12, JTextField B13, JTextField B21, JTextField B22, JTextField B23, JTextField B31, JTextField B32, JTextField B33, JTextField X, JTextField Y, JTextField Z, JTextArea Mensaje) throws InterruptedException{
+    public void ECUACION_SIMULTANEA_MATRIZ_INVERSA1(JTextField A11, JTextField A12, JTextField A13, JTextField A14, JTextField A21, JTextField A22, JTextField A23, JTextField A24, JTextField A31, JTextField A32, JTextField A33, JTextField A34, JTextField B11, JTextField B12, JTextField B13, JTextField B21, JTextField B22, JTextField B23, JTextField B31, JTextField B32, JTextField B33, JTextField X, JTextField Y, JTextField Z, JTextArea Mensaje) throws InterruptedException{
         //Declarar la Matriz A
         float[][] matriz1 = new float[7][7];
         float [][] det= new float[50][50];	// Vector para guardar los valores de la matriz ingresada, pero conforme el proceso de va modificando
