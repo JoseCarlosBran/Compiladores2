@@ -1092,7 +1092,7 @@ public class Procedimientos {
                     if(x!=i)
                         {
 			elem=matriz1[x][i];
-			for(int j=0; j<3*2; j++)
+			for(int j=0; j<7; j++)
                             {
                             matriz1[x][j]=matriz1[x][j]-(elem*matriz1[i][j]);
                             }
@@ -1153,6 +1153,205 @@ public class Procedimientos {
                 Y.setText(Float.toString(matriz1[1][3])); //Setea el valor en el respectivo espacio al que pertenence
                 Z.setText(Float.toString(matriz1[2][3])); //Setea el valor en el respectivo espacio al que pertenence
     }
+    
+    
+    
+    //Procedimiento para la Ecuacion Matriz Inversa de 2x2
+    public void ECUACION_SIMULTANEA_SUMA(JTextField A11, JTextField A12, JTextField A13, JTextField A21, JTextField A22, JTextField A23, JTextField B11, JTextField B12, JTextField B13, JTextField B21, JTextField B22, JTextField B23, JTextField X, JTextField Y, JTextArea Mensaje) throws InterruptedException{
+        //Declarar la Matriz A
+        float[][] ecuacion = new float[2][5];
+        float[] ecuaciona = new float[5];
+        float y=0;
+        float temp1=0;
+	float temp2=0;
+        
+        //Asignar valores
+        ecuacion[0][0]=Float.parseFloat(A11.getText());
+        ecuacion[0][2]=Float.parseFloat(A12.getText());
+        ecuacion[0][4]=Float.parseFloat(A13.getText());
+        
+        ecuacion[1][0]=Float.parseFloat(A21.getText());
+        ecuacion[1][2]=Float.parseFloat(A22.getText());
+        ecuacion[1][4]=Float.parseFloat(A23.getText());
+        Mensaje.append("Solucionar un sistema de ecuaciones de 2x2 por medio del");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("Metodo de la Suma y Resta");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        //Mostrar la En matriz B
+        B11.setText(Float.toString(ecuacion[0][0])); //Setea el valor en el respectivo espacio al que pertenence
+        B12.setText(Float.toString(ecuacion[0][2])); //Setea el valor en el respectivo espacio al que pertenence
+        B13.setText(Float.toString(ecuacion[0][4])); //Setea el valor en el respectivo espacio al que pertenence
+        
+        B21.setText(Float.toString(ecuacion[1][0])); //Setea el valor en el respectivo espacio al que pertenence
+        B22.setText(Float.toString(ecuacion[1][2])); //Setea el valor en el respectivo espacio al que pertenence
+        B23.setText(Float.toString(ecuacion[1][4])); //Setea el valor en el respectivo espacio al que pertenence
+        
+        //Guardo los valores de mi ecuacion 1
+	for(int j=0;j<5;j++)
+            {ecuaciona[j]=ecuacion[0][j];
+            }
+	
+        //solucion de la primera incognita X1
+	//obtencion de ecuacion eliminando la y de las dos ecuaciones
+	for(int j=0;j<5;j++)
+            {ecuacion[0][j]=ecuacion[0][j]*ecuacion[1][2];
+            }
+	for(int j=0;j<5;j++)
+            {ecuacion[1][j]=ecuacion[1][j]*(-ecuaciona[2]);
+            }
+        Mensaje.append("Proceso para eliminar Y");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+	Mensaje.append("Multiplicamos el valor de Y de la segunda ecuacion por la 1ra. Ecuacion");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa    
+	B11.setText(Float.toString(ecuacion[0][0])); //Setea el valor en el respectivo espacio al que pertenence
+        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
+        B12.setText(Float.toString(ecuacion[0][2])); //Setea el valor en el respectivo espacio al que pertenence
+        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
+        B13.setText(Float.toString(ecuacion[0][4])); //Setea el valor en el respectivo espacio al que pertenence
+        Mensaje.append("Multiplicamos el valor de Y de la primera ecuacion por la 2da. Ecuacion");//Envio de informacion a la ventana donde mostraremos la solucion
+        B21.setText(Float.toString(ecuacion[1][0])); //Setea el valor en el respectivo espacio al que pertenence
+        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
+        B22.setText(Float.toString(ecuacion[1][2])); //Setea el valor en el respectivo espacio al que pertenence
+        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
+        B23.setText(Float.toString(ecuacion[1][4])); //Setea el valor en el respectivo espacio al que pertenence
+        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("Esta es su ecuacion modificada para eliminar a Y");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        
+        //Guardo los valores de mi ecuacion 1
+	//ya he eliminado lo que es mi y de mis ecuaciones originales ahora encontrare el valor de y sumo las dos ecuaciones
+	for(int j=0;j<5;j++)
+	{ecuacion[1][j]=ecuacion[0][j]+ecuacion[1][j];
+	}
+	//Proceso de lo que se le va a mostrar al usuario
+	Mensaje.append("Multiplicamos el valor de Y de la primera ecuacion por la 2da. Ecuacion");//Envio de informacion a la ventana donde mostraremos la solucion
+        B21.setText(Float.toString(ecuacion[1][0])); //Setea el valor en el respectivo espacio al que pertenence
+        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
+        B22.setText(Float.toString(ecuacion[1][2])); //Setea el valor en el respectivo espacio al que pertenence
+        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
+        B23.setText(Float.toString(ecuacion[1][4])); //Setea el valor en el respectivo espacio al que pertenence
+        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("Luego Dividimos el coeficiente"+ecuacion[1][4]);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));		
+        Mensaje.append("Dividido el coeficiente"+ecuacion[1][0]);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("Y de esa manera obtenemos el valor de X");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        
+        //encontrar valor de la x
+	ecuacion[1][1]=ecuacion[1][4]/ecuacion[1][0];
+	
+        ecuaciona[3]=0;
+	float c1=ecuaciona[4];
+	float b1=ecuaciona[2];
+			
+        //solucion de la segunda Incognita
+	y=((ecuaciona[4]-(ecuaciona[0]*ecuacion[1][1]))/ecuaciona[2]);
+	
+        Mensaje.append("Este es el valor de X: "+ecuacion[1][1]);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        X.setText(Float.toString(ecuacion[1][1])); //Setea el valor en el respectivo espacio al que pertenence
+        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
+        Mensaje.append("Ahora sustituimos el valor de X en la ecuacion que nos quedo de haber despejado a Y en la Primera");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("Y operamos, despues de haber operado obtendremos el Valor de Y");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("Y = ("+c1+" - ("+ecuaciona[0]+" * "+ecuacion[1][1]+")) / "+b1);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("Operamos y encontraremos el valor de Y ");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        
+        B23.setText(Float.toString(ecuacion[1][4])); //Setea el valor en el respectivo espacio al que pertenence
+        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
+        Y.setText(Float.toString(ecuacion[1][4])); //Setea el valor en el respectivo espacio al que pertenence
+        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
+        
+        
+        Mensaje.append("Este es el valor de Y "+y);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+                      
+    }
+    
+    
+    
+    //Procedimiento para la Ecuacion Matriz Inversa de 2x2
+    public void ECUACION_SIMULTANEA_SUSTITUCION(JTextField A11, JTextField A12, JTextField A13, JTextField A21, JTextField A22, JTextField A23, JTextField B11, JTextField B12, JTextField B13, JTextField B21, JTextField B22, JTextField B23, JTextField X, JTextField Y, JTextArea Mensaje) throws InterruptedException{
+        //Declarar la Matriz A
+        float[][] ecuacion = new float[2][5];
+        float[] ecuaciona = new float[5];
+        float y=0;
+        float temp1=0;
+	float temp2=0;
+        
+        //Asignar valores
+        ecuacion[0][0]=Float.parseFloat(A11.getText());
+        ecuacion[0][2]=Float.parseFloat(A12.getText());
+        ecuacion[0][4]=Float.parseFloat(A13.getText());
+        
+        ecuacion[1][0]=Float.parseFloat(A21.getText());
+        ecuacion[1][2]=Float.parseFloat(A22.getText());
+        ecuacion[1][4]=Float.parseFloat(A23.getText());
+        Mensaje.append("Solucionar un sistema de ecuaciones de 2x2 por medio del");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("Metodo de la Sustitucion");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        //Mostrar la En matriz B
+        B11.setText(Float.toString(ecuacion[0][0])); //Setea el valor en el respectivo espacio al que pertenence
+        B12.setText(Float.toString(ecuacion[0][2])); //Setea el valor en el respectivo espacio al que pertenence
+        B13.setText(Float.toString(ecuacion[0][4])); //Setea el valor en el respectivo espacio al que pertenence
+        
+        B21.setText(Float.toString(ecuacion[1][0])); //Setea el valor en el respectivo espacio al que pertenence
+        B22.setText(Float.toString(ecuacion[1][2])); //Setea el valor en el respectivo espacio al que pertenence
+        B23.setText(Float.toString(ecuacion[1][4])); //Setea el valor en el respectivo espacio al que pertenence
+        
+	//solucion de la primera incognita X1
+	temp1=((ecuacion[1][2]*ecuacion[0][4])/ecuacion[0][2]);
+	temp2=((-ecuacion[0][0]*ecuacion[1][2])/ecuacion[0][2]);
+	ecuacion[1][0]=(ecuacion[1][0]+temp2);
+	ecuacion[1][1]=((ecuacion[1][4]-temp1)/ecuacion[1][0]);
+	
+        //solucion de la segunda Incognita
+	ecuacion[0][3]=((ecuacion[0][4]-(ecuacion[0][0]*ecuacion[1][1]))/ecuacion[0][2]);
+
+        
+        Mensaje.append("Proceso para Sustituir Y");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+	Mensaje.append("Despejamos a la incognita Y de la primera ecuacion y nos quedaria asi");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("Y= ("+ecuacion[0][4]+" - ("+ecuacion[0][0]+"X ))");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("dividido    "+ecuacion[0][2]);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("Ahora sustituimos a Y en la segunda ecuacion y la multiplicamos por el coeficiente de Y en la segunda ecuacion");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("Asi quedaria la segunda ecuacion:");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append(ecuacion[1][0]+"X + ("+ecuacion[1][2]+" por ("+ecuacion[0][4]+" - ("+ecuacion[0][0]+"X )"+"dividido    "+ecuacion[0][2]+")) = "+ecuacion[1][4]);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("Operamos hasta despejar X y de esta manera encontraremos el valor de X");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("Este es el valor de X: "+ecuacion[1][1]);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa    
+	X.setText(Float.toString(ecuacion[1][1])); //Setea el valor en el respectivo espacio al que pertenence
+        
+        Mensaje.append("Ahora sustituimos el valor de X en la ecuacion que nos quedo de haber despejado a Y");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("Y= ("+ecuacion[0][4]+" - ("+ecuacion[0][0]+"*"+ecuacion[1][1]+" ))"+" /"+ecuacion[0][2]);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        
+        Mensaje.append("Este es el valor de Y: "+ecuacion[0][3]);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa    
+	Y.setText(Float.toString(ecuacion[0][3])); //Setea el valor en el respectivo espacio al que pertenence
+        
+                      
+    }
+    
+    
     
     
     
