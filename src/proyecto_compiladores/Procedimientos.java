@@ -1516,6 +1516,35 @@ public class Procedimientos {
     
     
     
+    //Procedimiento para encontrar el factorial de un numero
+    public void FACTORIAL(JTextField FACTORIAL, JTextField RESULTADO, JTextArea Mensaje) throws InterruptedException{
+        int n=0;
+        int resultado=0;
+        n = Integer.parseInt(FACTORIAL.getText());
+        if (n>0)
+            {for(int i=n;i!=0;i--)
+                {resultado=resultado*i;
+                    Mensaje.append(""+resultado+" = "+resultado+" * "+i);//Envio de informacion a la ventana donde mostraremos la solucion
+                    Mensaje.append(System.getProperty("line.separator"));
+                    Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa 
+                    RESULTADO.setText(Integer.toString(i)); //Setea el valor en el respectivo espacio al que pertenence
+                }
+            }
+        else
+            {if(n==0)
+		{   
+                    Mensaje.append("por haber ingresado un 0 su resultado es 1");//Envio de informacion a la ventana donde mostraremos la solucion
+                    Mensaje.append(System.getProperty("line.separator"));
+                    n=1;
+                    RESULTADO.setText(Integer.toString(n)); //Setea el valor en el respectivo espacio al que pertenence
+                
+		}
+            }	
+
+        
+        
+    }
+    
     
     
     
