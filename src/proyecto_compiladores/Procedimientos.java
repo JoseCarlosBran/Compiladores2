@@ -5,6 +5,7 @@
  */
 package proyecto_compiladores;
 
+import java.text.DecimalFormat;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -16,6 +17,11 @@ public class Procedimientos {
     
     //Procedimiento para la Suma de matrices de 2x2
     public void SUMA_MATRIZ(JTextField A11, JTextField A12, JTextField A21, JTextField A22, JTextField B11, JTextField B12, JTextField B21, JTextField B22, JTextField C11, JTextField C12, JTextField C21, JTextField C22, JTextArea Mensaje) throws InterruptedException{
+        //Limpiar el mensaje
+        Mensaje.setText("");
+        //Declarar formato para los float
+        DecimalFormat formato = new DecimalFormat("#.##");
+        
         //Declarar la Matriz A
         float[][] matriz1 = new float[2][2];
         float[][] matriz3 = new float[2][2];
@@ -45,24 +51,21 @@ public class Procedimientos {
                         
                         Mensaje.append("1ro. Sumamos el coeficiente A11: "+A11.getText()+" + el coeficiente B11: "+B11.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C11.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C11.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego seteamos el valor en C11: "+C11.getText());
                         Mensaje.append(System.getProperty("line.separator"));
                     }
                     if(i==0 && j==1){
                         Mensaje.append("2Do. Sumamos el coeficiente A12: "+A12.getText()+" + el coeficiente B12: "+B12.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C12.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C12.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego seteamos el valor en C12: "+C12.getText());
                         Mensaje.append(System.getProperty("line.separator"));
                     }
                     if(i==1 && j==0){
                         Mensaje.append("3ro. Sumamos el coeficiente A21: "+A21.getText()+" + el coeficiente B21: "+B21.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C21.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C21.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego seteamos el valor en C21: "+C21.getText());
                         Mensaje.append(System.getProperty("line.separator"));
                         
@@ -70,18 +73,22 @@ public class Procedimientos {
                     if(i==1 && j==1){
                         Mensaje.append("4to. Sumamos el coeficiente A22: "+A22.getText()+" + el coeficiente B22: "+B22.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C22.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C22.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego seteamos el valor en C22: "+C22.getText());
                         Mensaje.append(System.getProperty("line.separator"));                      
                     }
-                    Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
                     }		
 		}
     }
     
     //Procedimiento para la Resta de matrices de 2x2
     public void RESTA_MATRIZ(JTextField A11, JTextField A12, JTextField A21, JTextField A22, JTextField B11, JTextField B12, JTextField B21, JTextField B22, JTextField C11, JTextField C12, JTextField C21, JTextField C22, JTextArea Mensaje) throws InterruptedException{
+        //Limpiar el mensaje
+        Mensaje.setText("");
+        //Declarar formato para los float
+        DecimalFormat formato = new DecimalFormat("#.##");
+        
+
         //Declarar la Matriz A
         float[][] matriz1 = new float[2][2];
         //Declarar la Matriz B
@@ -110,24 +117,21 @@ public class Procedimientos {
                         
                         Mensaje.append("1ro. Restamos el coeficiente A11: "+A11.getText()+" - el coeficiente B11: "+B11.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C11.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C11.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego seteamos el valor en C11: "+C11.getText());
                         Mensaje.append(System.getProperty("line.separator"));
                     }
                     if(i==0 && j==1){
                         Mensaje.append("2Do. Restamos el coeficiente A12: "+A12.getText()+" - el coeficiente B12: "+B12.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C12.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C12.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego seteamos el valor en C12: "+C12.getText());
                         Mensaje.append(System.getProperty("line.separator"));
                     }
                     if(i==1 && j==0){
                         Mensaje.append("3ro. Restamos el coeficiente A21: "+A21.getText()+" - el coeficiente B21: "+B21.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C21.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C21.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego seteamos el valor en C21: "+C21.getText());
                         Mensaje.append(System.getProperty("line.separator"));
                         
@@ -135,12 +139,10 @@ public class Procedimientos {
                     if(i==1 && j==1){
                         Mensaje.append("4to. Restamos el coeficiente A22: "+A22.getText()+" - el coeficiente B22: "+B22.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C22.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C22.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego seteamos el valor en C22: "+C22.getText());
                         Mensaje.append(System.getProperty("line.separator"));                      
                     }
-                    Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
                     }		
 		}
     }
@@ -148,6 +150,12 @@ public class Procedimientos {
     
     //Procedimiento para la Multiplicacion de matrices de 2x2
     public void MULTI_MATRIZ(JTextField A11, JTextField A12, JTextField A21, JTextField A22, JTextField B11, JTextField B12, JTextField B21, JTextField B22, JTextField C11, JTextField C12, JTextField C21, JTextField C22, JTextArea Mensaje) throws InterruptedException{
+        //Limpiar el mensaje
+        Mensaje.setText("");
+        //Declarar formato para los float
+        DecimalFormat formato = new DecimalFormat("#.##");
+        
+
         //Declarar la Matriz A
         float[][] matriz1 = new float[2][2];
         //Declarar la Matriz B
@@ -191,31 +199,27 @@ public class Procedimientos {
                 if(i==0 && x==0 && j==0){
                         Mensaje.append("1ro. Multiplicamos el coeficiente A11: "+A11.getText()+" * el coeficiente B11: "+B11.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C11.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C11.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego seteamos el valor en C11: "+C11.getText());
                         Mensaje.append(System.getProperty("line.separator"));
                     }
                     if(i==0 && x==1 && j==0){
                         Mensaje.append("2Do. Multiplicamos el coeficiente A12: "+A12.getText()+" * el coeficiente B21: "+B21.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C11.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C11.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego sumamos el resultado en C11: "+C11.getText());
                         Mensaje.append(System.getProperty("line.separator"));
                     }
-                    Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-		}
+                }
             if(i==0 && j==1){
-                C12.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                C12.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
             }
             if(i==1 && j==0){
-                C21.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence  
+                C21.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence  
             }
             if(i==1 && j==1){
-                C22.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
+                C22.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
             }
-            Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
             }		
 	}
     }
@@ -225,6 +229,11 @@ public class Procedimientos {
     
     //Procedimiento para la Suma de matrices de 3x3
     public void SUMA_MATRIZ(JTextField A11, JTextField A12, JTextField A13, JTextField A21, JTextField A22, JTextField A23, JTextField A31, JTextField A32, JTextField A33, JTextField B11, JTextField B12, JTextField B13,  JTextField B21, JTextField B22, JTextField B23, JTextField B31, JTextField B32, JTextField B33, JTextField C11, JTextField C12, JTextField C13, JTextField C21, JTextField C22, JTextField C23, JTextField C31, JTextField C32, JTextField C33, JTextArea Mensaje) throws InterruptedException{
+        //Limpiar el mensaje
+        Mensaje.setText("");
+        //Declarar formato para los float
+        DecimalFormat formato = new DecimalFormat("#.##");
+        
         //Declarar la Matriz A
         float[][] matriz1 = new float[3][3];
         //Declarar la Matriz B
@@ -264,24 +273,21 @@ public class Procedimientos {
                     if(i==0 && j==0){   
                         Mensaje.append("1ro. Sumamos el coeficiente A11: "+A11.getText()+" + el coeficiente B11: "+B11.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C11.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C11.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego seteamos el valor en C11: "+C11.getText());
                         Mensaje.append(System.getProperty("line.separator"));
                     }
                     if(i==0 && j==1){
                         Mensaje.append("2Do. Sumamos el coeficiente A12: "+A12.getText()+" + el coeficiente B12: "+B12.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C12.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C12.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego seteamos el valor en C12: "+C12.getText());
                         Mensaje.append(System.getProperty("line.separator"));
                     }
                     if(i==0 && j==2){
                         Mensaje.append("3ro. Sumamos el coeficiente A13: "+A13.getText()+" + el coeficiente B13: "+B13.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C13.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C13.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego seteamos el valor en C13: "+C13.getText());
                         Mensaje.append(System.getProperty("line.separator"));
                         Mensaje.append("Repetimos el mismo proceso con el resto de filas de las 2 matrices");
@@ -289,25 +295,24 @@ public class Procedimientos {
                     }
                     
                     if(i==1 && j==0){
-                        C21.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C21.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                     }
                     if(i==1 && j==1){
-                        C22.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence  
+                        C22.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence  
                     }
                     if(i==1 && j==2){
-                        C23.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
+                        C23.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
                     }
                     
                     if(i==2 && j==0){
-                        C31.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C31.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                     }
                     if(i==2 && j==1){
-                        C32.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence  
+                        C32.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence  
                     }
                     if(i==2 && j==2){
-                        C33.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
+                        C33.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
                     }
-                    Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
                     }		
 		}
     }
@@ -316,6 +321,11 @@ public class Procedimientos {
     
     //Procedimiento para la Resta de matrices de 3x3
     public void RESTA_MATRIZ(JTextField A11, JTextField A12, JTextField A13, JTextField A21, JTextField A22, JTextField A23, JTextField A31, JTextField A32, JTextField A33, JTextField B11, JTextField B12, JTextField B13,  JTextField B21, JTextField B22, JTextField B23, JTextField B31, JTextField B32, JTextField B33, JTextField C11, JTextField C12, JTextField C13, JTextField C21, JTextField C22, JTextField C23, JTextField C31, JTextField C32, JTextField C33, JTextArea Mensaje) throws InterruptedException{
+        //Limpiar el mensaje
+        Mensaje.setText("");
+        //Declarar formato para los float
+        DecimalFormat formato = new DecimalFormat("#.##");
+        
         //Declarar la Matriz A
         float[][] matriz1 = new float[3][3];
         //Declarar la Matriz B
@@ -355,57 +365,58 @@ public class Procedimientos {
                     if(i==0 && j==0){   
                         Mensaje.append("1ro. Restamos el coeficiente A11: "+A11.getText()+" - el coeficiente B11: "+B11.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C11.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C11.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego seteamos el valor en C11: "+C11.getText());
                         Mensaje.append(System.getProperty("line.separator"));
                     }
                     if(i==0 && j==1){
                         Mensaje.append("2Do. Restamos el coeficiente A12: "+A12.getText()+" - el coeficiente B12: "+B12.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C12.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C12.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego seteamos el valor en C12: "+C12.getText());
                         Mensaje.append(System.getProperty("line.separator"));
                     }
                     if(i==0 && j==2){
                         Mensaje.append("3ro. Restamos el coeficiente A13: "+A13.getText()+" - el coeficiente B13: "+B13.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C13.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C13.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego seteamos el valor en C13: "+C13.getText());
                         Mensaje.append(System.getProperty("line.separator"));
-                        Mensaje.append("Repetimos el mismo proceso con el resto de filas de las 2 matrices");
+                        Mensaje.append("Repetimos el mismo proceso con el resto de filas y columnas de las 2 matrices");
                         Mensaje.append(System.getProperty("line.separator"));
                     }
-                    
                     if(i==1 && j==0){
-                        C21.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C21.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                     }
                     if(i==1 && j==1){
-                        C22.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence  
+                        C22.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence  
                     }
                     if(i==1 && j==2){
-                        C23.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
+                        C23.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
                     }
                     
                     if(i==2 && j==0){
-                        C31.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C31.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                     }
                     if(i==2 && j==1){
-                        C32.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence  
+                        C32.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence  
                     }
                     if(i==2 && j==2){
-                        C33.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
+                        C33.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
                     }
-                    Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
                     }		
 		}
     }
     
 
-    //Procedimiento para la Multiplicacion de matrices de 2x2
+    //Procedimiento para la Multiplicacion de matrices de 3x3
     public void MULTI_MATRIZ(JTextField A11, JTextField A12, JTextField A13, JTextField A21, JTextField A22, JTextField A23, JTextField A31, JTextField A32, JTextField A33, JTextField B11, JTextField B12, JTextField B13,  JTextField B21, JTextField B22, JTextField B23, JTextField B31, JTextField B32, JTextField B33, JTextField C11, JTextField C12, JTextField C13, JTextField C21, JTextField C22, JTextField C23, JTextField C31, JTextField C32, JTextField C33, JTextArea Mensaje) throws InterruptedException{
+        //Limpiar el mensaje
+        Mensaje.setText("");
+        //Declarar formato para los float
+        DecimalFormat formato = new DecimalFormat("#.##");
+        
+
         //Declarar la Matriz A
         float[][] matriz1 = new float[2][2];
         //Declarar la Matriz B
@@ -463,7 +474,7 @@ public class Procedimientos {
                         Mensaje.append("1ro. Multiplicamos el coeficiente A11: "+A11.getText()+" * el coeficiente B11: "+B11.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
                         Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C11.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C11.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego seteamos el valor en C11: "+C11.getText());
                         Mensaje.append(System.getProperty("line.separator"));
                     }
@@ -471,7 +482,7 @@ public class Procedimientos {
                         Mensaje.append("2Do. Multiplicamos el coeficiente A12: "+A12.getText()+" * el coeficiente B21: "+B21.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
                         Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C11.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C11.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego sumamos el resultado en C11: "+C11.getText());
                         Mensaje.append(System.getProperty("line.separator"));
                     }
@@ -479,37 +490,38 @@ public class Procedimientos {
                         Mensaje.append("3ro. Multiplicamos el coeficiente A13: "+A13.getText()+" * el coeficiente B22: "+B22.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
                         Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                        C11.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                        C11.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego sumamos el resultado en C11: "+C11.getText());
+                        Mensaje.append(System.getProperty("line.separator"));
+                        Mensaje.append("Hacemos lo mismo con el resto de filas y columnas");
                         Mensaje.append(System.getProperty("line.separator"));
                     }
                     Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
 		}
             if(i==0 && j==1){
-                C12.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                C12.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
             }
             if(i==0 && j==2){
-                C13.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
+                C13.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
             }
             if(i==1 && j==0){
-                C21.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence  
+                C21.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence  
             }
             if(i==1 && j==1){
-                C22.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
+                C22.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
             }
             if(i==1 && j==2){
-                C23.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
+                C23.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
             }
             if(i==2 && j==0){
-                C31.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence  
+                C31.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence  
             }
             if(i==2 && j==1){
-                C32.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
+                C32.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
             }
             if(i==2 && j==2){
-                C33.setText(Float.toString(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
+                C33.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence                    
             }
-            Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
             }		
 	}
     }
@@ -518,6 +530,11 @@ public class Procedimientos {
     
     //Procedimiento para la Matriz Inversa de 2x2
     public void MATRIZ_INVERSA(JTextField A11, JTextField A12, JTextField A21, JTextField A22, JTextField B11, JTextField B12, JTextField B21, JTextField B22, JTextField Determinante, JTextArea Mensaje) throws InterruptedException{
+        //Limpiar el mensaje
+        Mensaje.setText("");
+        //Declarar formato para los float
+        DecimalFormat formato = new DecimalFormat("#.##");
+        
         //Declarar la Matriz A
         float[][] matriz1 = new float[4][4];
         float [][] det= new float[50][50];	// Vector para guardar los valores de la matriz ingresada, pero conforme el proceso de va modificando
@@ -552,7 +569,7 @@ public class Procedimientos {
 		        }
 		determinante=determinante*det[x+1][x+1]; 
                 }
-        Determinante.setText(Float.toString(determinante)); //Setea el valor en el respectivo espacio al que pertenence
+        Determinante.setText(formato.format(determinante)); //Setea el valor en el respectivo espacio al que pertenence
         if(determinante==0){
             Mensaje.append("El determinante de la matriz es 0");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
@@ -584,7 +601,6 @@ public class Procedimientos {
             Mensaje.append("Para Encontrar la Matriz Inversa");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Lo hacemos por el metodo de Gauss Jordan");//Envio de informacion a la ventana donde mostraremos la solucion
-            Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Tenemos las siguientes Operaciones de Fila");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
@@ -592,7 +608,6 @@ public class Procedimientos {
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Sumar (o restar) a una fila, el múltiplo de otra fila.");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
-            Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
             Mensaje.append("Intercambiar el orden de las filas.");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append(System.getProperty("line.separator"));
@@ -600,8 +615,7 @@ public class Procedimientos {
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Con tal, que nuestra Matriz Original, quede como la matriz identidad.");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
-            Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-	// Proceso para hace la matriz que ingresamos una identidad y la identidad hacerla matriz inversa
+        // Proceso para hace la matriz que ingresamos una identidad y la identidad hacerla matriz inversa
             for(int i=0; i<2; i++)
 		{
 		elem=matriz1[i][i];
@@ -611,7 +625,6 @@ public class Procedimientos {
                     }
                 Mensaje.append("Convertimos en 1 el elemento en la diagonal");//Envio de informacion a la ventana donde mostraremos la solucion
                 Mensaje.append(System.getProperty("line.separator"));
-                Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
                 A11.setText(Float.toString(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
                 A12.setText(Float.toString(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
                 A21.setText(Float.toString(matriz1[1][0])); //Setea el valor en el respectivo espacio al que pertenence
@@ -633,7 +646,6 @@ public class Procedimientos {
                     }
                 Mensaje.append("Convertimos en 0 el elemento que No esta en la diagonal");//Envio de informacion a la ventana donde mostraremos la solucion
                 Mensaje.append(System.getProperty("line.separator"));
-                Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
                 A11.setText(Float.toString(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
                 A12.setText(Float.toString(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
                 A21.setText(Float.toString(matriz1[1][0])); //Setea el valor en el respectivo espacio al que pertenence
@@ -644,24 +656,28 @@ public class Procedimientos {
                 B22.setText(Float.toString(matriz1[1][3])); //Setea el valor en el respectivo espacio al que pertenence
 		}
 	//Imprimir la matriz Inversa
-                Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
                 Mensaje.append(System.getProperty("line.separator"));
                 Mensaje.append("Asi es como nos quedara nuestra Matriz Inversa Resuelta");//Envio de informacion a la ventana donde mostraremos la solucion
                 Mensaje.append(System.getProperty("line.separator"));
-                A11.setText(Float.toString(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
-                A12.setText(Float.toString(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
-                A21.setText(Float.toString(matriz1[1][0])); //Setea el valor en el respectivo espacio al que pertenence
-                A22.setText(Float.toString(matriz1[1][1])); //Setea el valor en el respectivo espacio al que pertenence
-                B11.setText(Float.toString(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
-                B12.setText(Float.toString(matriz1[0][3])); //Setea el valor en el respectivo espacio al que pertenence
-                B21.setText(Float.toString(matriz1[1][2])); //Setea el valor en el respectivo espacio al que pertenence
-                B22.setText(Float.toString(matriz1[1][3])); //Setea el valor en el respectivo espacio al que pertenence
+                A11.setText(formato.format(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
+                A12.setText(formato.format(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
+                A21.setText(formato.format(matriz1[1][0])); //Setea el valor en el respectivo espacio al que pertenence
+                A22.setText(formato.format(matriz1[1][1])); //Setea el valor en el respectivo espacio al que pertenence
+                B11.setText(formato.format(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
+                B12.setText(formato.format(matriz1[0][3])); //Setea el valor en el respectivo espacio al que pertenence
+                B21.setText(formato.format(matriz1[1][2])); //Setea el valor en el respectivo espacio al que pertenence
+                B22.setText(formato.format(matriz1[1][3])); //Setea el valor en el respectivo espacio al que pertenence
         }
     }
     
     
     //Procedimiento para la Matriz Inversa de 3x3
     public void MATRIZ_INVERSA(JTextField A11, JTextField A12, JTextField A13, JTextField A21, JTextField A22, JTextField A23, JTextField A31, JTextField A32, JTextField A33, JTextField B11, JTextField B12, JTextField B13, JTextField B21, JTextField B22, JTextField B23, JTextField B31, JTextField B32, JTextField B33, JTextField Determinante, JTextArea Mensaje) throws InterruptedException{
+        //Limpiar el mensaje
+        Mensaje.setText("");
+        //Declarar formato para los float
+        DecimalFormat formato = new DecimalFormat("#.##");
+        
         //Declarar la Matriz A
         float[][] matriz1 = new float[6][6];
         float [][] det= new float[50][50];	// Vector para guardar los valores de la matriz ingresada, pero conforme el proceso de va modificando
@@ -701,7 +717,7 @@ public class Procedimientos {
 		        }
 		determinante=determinante*det[x+1][x+1]; 
                 }
-        Determinante.setText(Float.toString(determinante)); //Setea el valor en el respectivo espacio al que pertenence
+        Determinante.setText(formato.format(determinante)); //Setea el valor en el respectivo espacio al que pertenence
         if(determinante==0){
             Mensaje.append("El determinante de la matriz es 0");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
@@ -739,13 +755,11 @@ public class Procedimientos {
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Lo hacemos por el metodo de Gauss Jordan");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
-            Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
             Mensaje.append("Tenemos las siguientes Operaciones de Fila");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Multiplicar una fila por un número distinto de 0.");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Sumar (o restar) a una fila, el múltiplo de otra fila.");//Envio de informacion a la ventana donde mostraremos la solucion
-            Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Intercambiar el orden de las filas.");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
@@ -754,8 +768,7 @@ public class Procedimientos {
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Con tal, que nuestra Matriz Original, quede como la matriz identidad.");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
-            Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-	// Proceso para hace la matriz que ingresamos una identidad y la identidad hacerla matriz inversa
+        // Proceso para hace la matriz que ingresamos una identidad y la identidad hacerla matriz inversa
             for(int i=0; i<3; i++)
 		{
 		elem=matriz1[i][i];
@@ -765,7 +778,6 @@ public class Procedimientos {
                     }
                 Mensaje.append("Convertimos en 1 el elemento en la diagonal");//Envio de informacion a la ventana donde mostraremos la solucion
                 Mensaje.append(System.getProperty("line.separator"));
-                Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
                 A11.setText(Float.toString(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
                 A12.setText(Float.toString(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
                 A13.setText(Float.toString(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
@@ -797,7 +809,6 @@ public class Procedimientos {
                     }
                 Mensaje.append("Convertimos en 0 el elemento que No esta en la diagonal");//Envio de informacion a la ventana donde mostraremos la solucion
                 Mensaje.append(System.getProperty("line.separator"));
-                Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
                 A11.setText(Float.toString(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
                 A12.setText(Float.toString(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
                 A13.setText(Float.toString(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
@@ -821,25 +832,24 @@ public class Procedimientos {
                 Mensaje.append(System.getProperty("line.separator"));
                 Mensaje.append("Asi es como nos quedara nuestra Matriz Inversa Resuelta");//Envio de informacion a la ventana donde mostraremos la solucion
                 Mensaje.append(System.getProperty("line.separator"));
-                Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                A11.setText(Float.toString(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
-                A12.setText(Float.toString(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
-                A13.setText(Float.toString(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
-                A21.setText(Float.toString(matriz1[1][0])); //Setea el valor en el respectivo espacio al que pertenence
-                A22.setText(Float.toString(matriz1[1][1])); //Setea el valor en el respectivo espacio al que pertenence
-                A23.setText(Float.toString(matriz1[1][2])); //Setea el valor en el respectivo espacio al que pertenence
-                A31.setText(Float.toString(matriz1[2][0])); //Setea el valor en el respectivo espacio al que pertenence
-                A32.setText(Float.toString(matriz1[2][1])); //Setea el valor en el respectivo espacio al que pertenence
-                A33.setText(Float.toString(matriz1[2][2])); //Setea el valor en el respectivo espacio al que pertenence
-                B11.setText(Float.toString(matriz1[0][3])); //Setea el valor en el respectivo espacio al que pertenence
-                B12.setText(Float.toString(matriz1[0][4])); //Setea el valor en el respectivo espacio al que pertenence
-                B13.setText(Float.toString(matriz1[0][5])); //Setea el valor en el respectivo espacio al que pertenence
-                B21.setText(Float.toString(matriz1[1][3])); //Setea el valor en el respectivo espacio al que pertenence
-                B22.setText(Float.toString(matriz1[1][4])); //Setea el valor en el respectivo espacio al que pertenence
-                B23.setText(Float.toString(matriz1[1][5])); //Setea el valor en el respectivo espacio al que pertenence
-                B31.setText(Float.toString(matriz1[2][3])); //Setea el valor en el respectivo espacio al que pertenence
-                B32.setText(Float.toString(matriz1[2][4])); //Setea el valor en el respectivo espacio al que pertenence
-                B33.setText(Float.toString(matriz1[2][5])); //Setea el valor en el respectivo espacio al que pertenence	
+                A11.setText(formato.format(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
+                A12.setText(formato.format(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
+                A13.setText(formato.format(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
+                A21.setText(formato.format(matriz1[1][0])); //Setea el valor en el respectivo espacio al que pertenence
+                A22.setText(formato.format(matriz1[1][1])); //Setea el valor en el respectivo espacio al que pertenence
+                A23.setText(formato.format(matriz1[1][2])); //Setea el valor en el respectivo espacio al que pertenence
+                A31.setText(formato.format(matriz1[2][0])); //Setea el valor en el respectivo espacio al que pertenence
+                A32.setText(formato.format(matriz1[2][1])); //Setea el valor en el respectivo espacio al que pertenence
+                A33.setText(formato.format(matriz1[2][2])); //Setea el valor en el respectivo espacio al que pertenence
+                B11.setText(formato.format(matriz1[0][3])); //Setea el valor en el respectivo espacio al que pertenence
+                B12.setText(formato.format(matriz1[0][4])); //Setea el valor en el respectivo espacio al que pertenence
+                B13.setText(formato.format(matriz1[0][5])); //Setea el valor en el respectivo espacio al que pertenence
+                B21.setText(formato.format(matriz1[1][3])); //Setea el valor en el respectivo espacio al que pertenence
+                B22.setText(formato.format(matriz1[1][4])); //Setea el valor en el respectivo espacio al que pertenence
+                B23.setText(formato.format(matriz1[1][5])); //Setea el valor en el respectivo espacio al que pertenence
+                B31.setText(formato.format(matriz1[2][3])); //Setea el valor en el respectivo espacio al que pertenence
+                B32.setText(formato.format(matriz1[2][4])); //Setea el valor en el respectivo espacio al que pertenence
+                B33.setText(formato.format(matriz1[2][5])); //Setea el valor en el respectivo espacio al que pertenence	
         }
     }
     
@@ -848,11 +858,13 @@ public class Procedimientos {
      
     //Procedimiento para la Ecuacion Matriz Inversa de 2x2
     public void ECUACION_SIMULTANEA_MATRIZ_INVERSA(JTextField A11, JTextField A12, JTextField A13, JTextField A21, JTextField A22, JTextField A23, JTextField B11, JTextField B12, JTextField B21, JTextField B22, JTextField X, JTextField Y, JTextArea Mensaje) throws InterruptedException{
+        //Limpiar el mensaje
+        Mensaje.setText("");
+        //Declarar formato para los float
+        DecimalFormat formato = new DecimalFormat("#.##");
+        
         //Declarar la Matriz A
         float[][] matriz1 = new float[5][5];
-        float [][] det= new float[50][50];	// Vector para guardar los valores de la matriz ingresada, pero conforme el proceso de va modificando
-	float determinante;	// Variable para guardar el valor de la determinante
-	int m;						// Variable auxiliar para la determinante
         float elem;					// Variable auxiliar para realizar la matriz inversa
         //Asignar valores
         matriz1[0][0]=Float.parseFloat(A11.getText());
@@ -888,7 +900,6 @@ public class Procedimientos {
             Mensaje.append("Para Encontrar la Solucion a nuestra ecuacion");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Lo hacemos por el metodo de Gauss Jordan");//Envio de informacion a la ventana donde mostraremos la solucion
-            Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Tenemos las siguientes Operaciones de Fila");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
@@ -896,7 +907,6 @@ public class Procedimientos {
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Sumar (o restar) a una fila, el múltiplo de otra fila.");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
-            Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
             Mensaje.append("Intercambiar el orden de las filas.");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append(System.getProperty("line.separator"));
@@ -904,8 +914,7 @@ public class Procedimientos {
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Con tal, que nuestra Matriz Original, quede como la matriz identidad.");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
-            Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-	// Proceso para hace la matriz que ingresamos una identidad y la identidad hacerla matriz inversa
+        // Proceso para hace la matriz que ingresamos una identidad y la identidad hacerla matriz inversa
             for(int i=0; i<2; i++)
 		{
 		elem=matriz1[i][i];
@@ -915,7 +924,6 @@ public class Procedimientos {
                     }
                 Mensaje.append("Convertimos en 1 el elemento en la diagonal");//Envio de informacion a la ventana donde mostraremos la solucion
                 Mensaje.append(System.getProperty("line.separator"));
-                Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
                 A11.setText(Float.toString(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
                 A12.setText(Float.toString(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
                 A13.setText(Float.toString(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
@@ -943,7 +951,6 @@ public class Procedimientos {
                     }
                 Mensaje.append("Convertimos en 0 el elemento que No esta en la diagonal");//Envio de informacion a la ventana donde mostraremos la solucion
                 Mensaje.append(System.getProperty("line.separator"));
-                Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
                 A11.setText(Float.toString(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
                 A12.setText(Float.toString(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
                 A13.setText(Float.toString(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
@@ -958,33 +965,34 @@ public class Procedimientos {
                 B22.setText(Float.toString(matriz1[1][4])); //Setea el valor en el respectivo espacio al que pertenence
 		}
 	//Imprimir la matriz Inversa
-                Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
                 Mensaje.append(System.getProperty("line.separator"));
                 Mensaje.append("Asi es como nos quedara nuestra Ecuacion Resuelta");//Envio de informacion a la ventana donde mostraremos la solucion
                 Mensaje.append(System.getProperty("line.separator"));
-                A11.setText(Float.toString(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
-                A12.setText(Float.toString(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
-                A13.setText(Float.toString(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence            
-                A21.setText(Float.toString(matriz1[1][0])); //Setea el valor en el respectivo espacio al que pertenence
-                A22.setText(Float.toString(matriz1[1][1])); //Setea el valor en el respectivo espacio al que pertenence
-                A23.setText(Float.toString(matriz1[1][2])); //Setea el valor en el respectivo espacio al que pertenence                
-                B11.setText(Float.toString(matriz1[0][3])); //Setea el valor en el respectivo espacio al que pertenence
-                B12.setText(Float.toString(matriz1[0][4])); //Setea el valor en el respectivo espacio al que pertenence
-                B21.setText(Float.toString(matriz1[1][3])); //Setea el valor en el respectivo espacio al que pertenence
-                B22.setText(Float.toString(matriz1[1][4])); //Setea el valor en el respectivo espacio al que pertenence		
-                X.setText(Float.toString(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
-                Y.setText(Float.toString(matriz1[1][2])); //Setea el valor en el respectivo espacio al que pertenence               
+                A11.setText(formato.format(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
+                A12.setText(formato.format(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
+                A13.setText(formato.format(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence            
+                A21.setText(formato.format(matriz1[1][0])); //Setea el valor en el respectivo espacio al que pertenence
+                A22.setText(formato.format(matriz1[1][1])); //Setea el valor en el respectivo espacio al que pertenence
+                A23.setText(formato.format(matriz1[1][2])); //Setea el valor en el respectivo espacio al que pertenence                
+                B11.setText(formato.format(matriz1[0][3])); //Setea el valor en el respectivo espacio al que pertenence
+                B12.setText(formato.format(matriz1[0][4])); //Setea el valor en el respectivo espacio al que pertenence
+                B21.setText(formato.format(matriz1[1][3])); //Setea el valor en el respectivo espacio al que pertenence
+                B22.setText(formato.format(matriz1[1][4])); //Setea el valor en el respectivo espacio al que pertenence		
+                X.setText(formato.format(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
+                Y.setText(formato.format(matriz1[1][2])); //Setea el valor en el respectivo espacio al que pertenence               
     }
     
     
     
     //Procedimiento para la Matriz Inversa de 3x3
     public void ECUACION_SIMULTANEA_MATRIZ_INVERSA(JTextField A11, JTextField A12, JTextField A13, JTextField A14, JTextField A21, JTextField A22, JTextField A23, JTextField A24, JTextField A31, JTextField A32, JTextField A33, JTextField A34, JTextField B11, JTextField B12, JTextField B13, JTextField B21, JTextField B22, JTextField B23, JTextField B31, JTextField B32, JTextField B33, JTextField X, JTextField Y, JTextField Z, JTextArea Mensaje) throws InterruptedException{
+        //Limpiar el mensaje
+        Mensaje.setText("");
+        //Declarar formato para los float
+        DecimalFormat formato = new DecimalFormat("#.##");
+        
         //Declarar la Matriz A
         float[][] matriz1 = new float[7][7];
-        float [][] det= new float[50][50];	// Vector para guardar los valores de la matriz ingresada, pero conforme el proceso de va modificando
-	float determinante;	// Variable para guardar el valor de la determinante
-	int m;						// Variable auxiliar para la determinante
         float elem;					// Variable auxiliar para realizar la matriz inversa
         //Asignar valores
         matriz1[0][0]=Float.parseFloat(A11.getText());
@@ -1038,13 +1046,11 @@ public class Procedimientos {
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Lo hacemos por el metodo de Gauss Jordan");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
-            Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
             Mensaje.append("Tenemos las siguientes Operaciones de Fila");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Multiplicar una fila por un número distinto de 0.");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Sumar (o restar) a una fila, el múltiplo de otra fila.");//Envio de informacion a la ventana donde mostraremos la solucion
-            Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Intercambiar el orden de las filas.");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
@@ -1053,8 +1059,7 @@ public class Procedimientos {
             Mensaje.append(System.getProperty("line.separator"));
             Mensaje.append("Con tal, que nuestra Matriz Original, quede como la matriz identidad.");//Envio de informacion a la ventana donde mostraremos la solucion
             Mensaje.append(System.getProperty("line.separator"));
-            Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-	// Proceso para hace la matriz que ingresamos una identidad y la identidad hacerla matriz inversa
+        // Proceso para hace la matriz que ingresamos una identidad y la identidad hacerla matriz inversa
             for(int i=0; i<3; i++)
 		{
 		elem=matriz1[i][i];
@@ -1064,7 +1069,6 @@ public class Procedimientos {
                     }
                 Mensaje.append("Convertimos en 1 el elemento en la diagonal");//Envio de informacion a la ventana donde mostraremos la solucion
                 Mensaje.append(System.getProperty("line.separator"));
-                Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
                 A11.setText(Float.toString(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
                 A12.setText(Float.toString(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
                 A13.setText(Float.toString(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
@@ -1100,7 +1104,6 @@ public class Procedimientos {
                     }
                 Mensaje.append("Convertimos en 0 el elemento que No esta en la diagonal");//Envio de informacion a la ventana donde mostraremos la solucion
                 Mensaje.append(System.getProperty("line.separator"));
-                Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
                 A11.setText(Float.toString(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
                 A12.setText(Float.toString(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
                 A13.setText(Float.toString(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
@@ -1127,37 +1130,41 @@ public class Procedimientos {
                 Mensaje.append(System.getProperty("line.separator"));
                 Mensaje.append("Asi es como nos quedara nuestra Matriz Inversa Resuelta");//Envio de informacion a la ventana donde mostraremos la solucion
                 Mensaje.append(System.getProperty("line.separator"));
-                Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-                A11.setText(Float.toString(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
-                A12.setText(Float.toString(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
-                A13.setText(Float.toString(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
-                A14.setText(Float.toString(matriz1[0][3])); //Setea el valor en el respectivo espacio al que pertenence
-                A21.setText(Float.toString(matriz1[1][0])); //Setea el valor en el respectivo espacio al que pertenence
-                A22.setText(Float.toString(matriz1[1][1])); //Setea el valor en el respectivo espacio al que pertenence
-                A23.setText(Float.toString(matriz1[1][2])); //Setea el valor en el respectivo espacio al que pertenence
-                A24.setText(Float.toString(matriz1[1][3])); //Setea el valor en el respectivo espacio al que pertenence
-                A31.setText(Float.toString(matriz1[2][0])); //Setea el valor en el respectivo espacio al que pertenence
-                A32.setText(Float.toString(matriz1[2][1])); //Setea el valor en el respectivo espacio al que pertenence
-                A33.setText(Float.toString(matriz1[2][2])); //Setea el valor en el respectivo espacio al que pertenence
-                A34.setText(Float.toString(matriz1[2][3])); //Setea el valor en el respectivo espacio al que pertenence
-                B11.setText(Float.toString(matriz1[0][4])); //Setea el valor en el respectivo espacio al que pertenence
-                B12.setText(Float.toString(matriz1[0][5])); //Setea el valor en el respectivo espacio al que pertenence
-                B13.setText(Float.toString(matriz1[0][6])); //Setea el valor en el respectivo espacio al que pertenence
-                B21.setText(Float.toString(matriz1[1][4])); //Setea el valor en el respectivo espacio al que pertenence
-                B22.setText(Float.toString(matriz1[1][5])); //Setea el valor en el respectivo espacio al que pertenence
-                B23.setText(Float.toString(matriz1[1][6])); //Setea el valor en el respectivo espacio al que pertenence
-                B31.setText(Float.toString(matriz1[2][4])); //Setea el valor en el respectivo espacio al que pertenence
-                B32.setText(Float.toString(matriz1[2][5])); //Setea el valor en el respectivo espacio al que pertenence
-                B33.setText(Float.toString(matriz1[2][6])); //Setea el valor en el respectivo espacio al que pertenence
-		X.setText(Float.toString(matriz1[0][3])); //Setea el valor en el respectivo espacio al que pertenence
-                Y.setText(Float.toString(matriz1[1][3])); //Setea el valor en el respectivo espacio al que pertenence
-                Z.setText(Float.toString(matriz1[2][3])); //Setea el valor en el respectivo espacio al que pertenence
+                A11.setText(formato.format(matriz1[0][0])); //Setea el valor en el respectivo espacio al que pertenence
+                A12.setText(formato.format(matriz1[0][1])); //Setea el valor en el respectivo espacio al que pertenence
+                A13.setText(formato.format(matriz1[0][2])); //Setea el valor en el respectivo espacio al que pertenence
+                A14.setText(formato.format(matriz1[0][3])); //Setea el valor en el respectivo espacio al que pertenence
+                A21.setText(formato.format(matriz1[1][0])); //Setea el valor en el respectivo espacio al que pertenence
+                A22.setText(formato.format(matriz1[1][1])); //Setea el valor en el respectivo espacio al que pertenence
+                A23.setText(formato.format(matriz1[1][2])); //Setea el valor en el respectivo espacio al que pertenence
+                A24.setText(formato.format(matriz1[1][3])); //Setea el valor en el respectivo espacio al que pertenence
+                A31.setText(formato.format(matriz1[2][0])); //Setea el valor en el respectivo espacio al que pertenence
+                A32.setText(formato.format(matriz1[2][1])); //Setea el valor en el respectivo espacio al que pertenence
+                A33.setText(formato.format(matriz1[2][2])); //Setea el valor en el respectivo espacio al que pertenence
+                A34.setText(formato.format(matriz1[2][3])); //Setea el valor en el respectivo espacio al que pertenence
+                B11.setText(formato.format(matriz1[0][4])); //Setea el valor en el respectivo espacio al que pertenence
+                B12.setText(formato.format(matriz1[0][5])); //Setea el valor en el respectivo espacio al que pertenence
+                B13.setText(formato.format(matriz1[0][6])); //Setea el valor en el respectivo espacio al que pertenence
+                B21.setText(formato.format(matriz1[1][4])); //Setea el valor en el respectivo espacio al que pertenence
+                B22.setText(formato.format(matriz1[1][5])); //Setea el valor en el respectivo espacio al que pertenence
+                B23.setText(formato.format(matriz1[1][6])); //Setea el valor en el respectivo espacio al que pertenence
+                B31.setText(formato.format(matriz1[2][4])); //Setea el valor en el respectivo espacio al que pertenence
+                B32.setText(formato.format(matriz1[2][5])); //Setea el valor en el respectivo espacio al que pertenence
+                B33.setText(formato.format(matriz1[2][6])); //Setea el valor en el respectivo espacio al que pertenence
+		X.setText(formato.format(matriz1[0][3])); //Setea el valor en el respectivo espacio al que pertenence
+                Y.setText(formato.format(matriz1[1][3])); //Setea el valor en el respectivo espacio al que pertenence
+                Z.setText(formato.format(matriz1[2][3])); //Setea el valor en el respectivo espacio al que pertenence
     }
     
     
     
     //Procedimiento para la Ecuacion Matriz Inversa de 2x2
     public void ECUACION_SIMULTANEA_SUMA(JTextField A11, JTextField A12, JTextField A13, JTextField A21, JTextField A22, JTextField A23, JTextField B11, JTextField B12, JTextField B13, JTextField B21, JTextField B22, JTextField B23, JTextField X, JTextField Y, JTextArea Mensaje) throws InterruptedException{
+        //Limpiar el mensaje
+        Mensaje.setText("");
+        //Declarar formato para los float
+        DecimalFormat formato = new DecimalFormat("#.##");
+        
         //Declarar la Matriz A
         float[][] ecuacion = new float[2][5];
         float[] ecuaciona = new float[5];
@@ -1203,19 +1210,13 @@ public class Procedimientos {
         Mensaje.append(System.getProperty("line.separator"));
 	Mensaje.append("Multiplicamos el valor de Y de la segunda ecuacion por la 1ra. Ecuacion");//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
-        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa    
-	B11.setText(Float.toString(ecuacion[0][0])); //Setea el valor en el respectivo espacio al que pertenence
-        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
+        B11.setText(Float.toString(ecuacion[0][0])); //Setea el valor en el respectivo espacio al que pertenence
         B12.setText(Float.toString(ecuacion[0][2])); //Setea el valor en el respectivo espacio al que pertenence
-        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
         B13.setText(Float.toString(ecuacion[0][4])); //Setea el valor en el respectivo espacio al que pertenence
         Mensaje.append("Multiplicamos el valor de Y de la primera ecuacion por la 2da. Ecuacion");//Envio de informacion a la ventana donde mostraremos la solucion
         B21.setText(Float.toString(ecuacion[1][0])); //Setea el valor en el respectivo espacio al que pertenence
-        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
         B22.setText(Float.toString(ecuacion[1][2])); //Setea el valor en el respectivo espacio al que pertenence
-        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
         B23.setText(Float.toString(ecuacion[1][4])); //Setea el valor en el respectivo espacio al que pertenence
-        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
         Mensaje.append(System.getProperty("line.separator"));
         Mensaje.append("Esta es su ecuacion modificada para eliminar a Y");//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
@@ -1228,11 +1229,8 @@ public class Procedimientos {
 	//Proceso de lo que se le va a mostrar al usuario
 	Mensaje.append("Multiplicamos el valor de Y de la primera ecuacion por la 2da. Ecuacion");//Envio de informacion a la ventana donde mostraremos la solucion
         B21.setText(Float.toString(ecuacion[1][0])); //Setea el valor en el respectivo espacio al que pertenence
-        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
         B22.setText(Float.toString(ecuacion[1][2])); //Setea el valor en el respectivo espacio al que pertenence
-        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
         B23.setText(Float.toString(ecuacion[1][4])); //Setea el valor en el respectivo espacio al que pertenence
-        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
         Mensaje.append(System.getProperty("line.separator"));
         Mensaje.append("Luego Dividimos el coeficiente"+ecuacion[1][4]);//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));		
@@ -1253,8 +1251,8 @@ public class Procedimientos {
 	
         Mensaje.append("Este es el valor de X: "+ecuacion[1][1]);//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
-        X.setText(Float.toString(ecuacion[1][1])); //Setea el valor en el respectivo espacio al que pertenence
-        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
+        X.setText(formato.format(ecuacion[1][1]));
+        //X.setText(Float.toString(ecuacion[1][1])); //Setea el valor en el respectivo espacio al que pertenence
         Mensaje.append("Ahora sustituimos el valor de X en la ecuacion que nos quedo de haber despejado a Y en la Primera");//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
         Mensaje.append("Y operamos, despues de haber operado obtendremos el Valor de Y");//Envio de informacion a la ventana donde mostraremos la solucion
@@ -1265,11 +1263,8 @@ public class Procedimientos {
         Mensaje.append(System.getProperty("line.separator"));
         
         B23.setText(Float.toString(ecuacion[1][4])); //Setea el valor en el respectivo espacio al que pertenence
-        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-        Y.setText(Float.toString(ecuacion[1][4])); //Setea el valor en el respectivo espacio al que pertenence
-        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-        
-        
+        Y.setText(formato.format(y));
+        //Y.setText(Float.toString(y)); //Setea el valor en el respectivo espacio al que pertenence
         Mensaje.append("Este es el valor de Y "+y);//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
                       
@@ -1279,6 +1274,11 @@ public class Procedimientos {
     
     //Procedimiento para la Ecuacion Matriz Inversa de 2x2
     public void ECUACION_SIMULTANEA_SUSTITUCION(JTextField A11, JTextField A12, JTextField A13, JTextField A21, JTextField A22, JTextField A23, JTextField B11, JTextField B12, JTextField B13, JTextField B21, JTextField B22, JTextField B23, JTextField X, JTextField Y, JTextArea Mensaje) throws InterruptedException{
+        //Limpiar el mensaje
+        Mensaje.setText("");
+        //Declarar formato para los float
+        DecimalFormat formato = new DecimalFormat("#.##");
+        
         //Declarar la Matriz A
         float[][] ecuacion = new float[2][5];
         float[] ecuaciona = new float[5];
@@ -1335,8 +1335,8 @@ public class Procedimientos {
         Mensaje.append(System.getProperty("line.separator"));
         Mensaje.append("Este es el valor de X: "+ecuacion[1][1]);//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
-        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa    
-	X.setText(Float.toString(ecuacion[1][1])); //Setea el valor en el respectivo espacio al que pertenence
+        X.setText(formato.format(ecuacion[1][1])); //Setea el valor en el respectivo espacio al que pertenence
+        //X.setText(Float.toString(ecuacion[1][1])); //Setea el valor en el respectivo espacio al que pertenence
         
         Mensaje.append("Ahora sustituimos el valor de X en la ecuacion que nos quedo de haber despejado a Y");//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
@@ -1345,8 +1345,8 @@ public class Procedimientos {
         
         Mensaje.append("Este es el valor de Y: "+ecuacion[0][3]);//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
-        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa    
-	Y.setText(Float.toString(ecuacion[0][3])); //Setea el valor en el respectivo espacio al que pertenence
+        Y.setText(formato.format(ecuacion[0][3])); //Setea el valor en el respectivo espacio al que pertenence
+        //Y.setText(Float.toString(ecuacion[0][3])); //Setea el valor en el respectivo espacio al que pertenence
         
                       
     }
@@ -1354,6 +1354,10 @@ public class Procedimientos {
     
     //Procedimiento para la Ecuacion Matriz Inversa de 3x3
     public void ECUACION_SIMULTANEA_SUSTITUCION(JTextField A11, JTextField A12, JTextField A13, JTextField A14, JTextField A21, JTextField A22, JTextField A23, JTextField A24, JTextField A31, JTextField A32, JTextField A33, JTextField A34, JTextField B11, JTextField B12, JTextField B13, JTextField B14, JTextField B21, JTextField B22, JTextField B23, JTextField B24, JTextField B31, JTextField B32, JTextField B33, JTextField B34, JTextField X, JTextField Y, JTextField Z, JTextArea Mensaje) throws InterruptedException{
+        //Limpiar el mensaje
+        Mensaje.setText("");
+        //Declarar formato para los float
+        DecimalFormat formato = new DecimalFormat("#.##");
         //Declarar la Matriz A
         float[][] ecuacion = new float[3][7];
         
@@ -1462,8 +1466,8 @@ public class Procedimientos {
 	//solucion de la Tercera Incognita
 	ecuacion[2][5]=(ecuacion[2][6]-(ecuacion[2][2]*ecuacion[0][3])-(ecuacion[2][0]*ecuacion[1][1]))/ecuacion[2][4];
 	
-        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa    
-	X.setText(Float.toString(ecuacion[1][1])); //Setea el valor en el respectivo espacio al que pertenence
+        
+	//X.setText(Float.toString(ecuacion[1][1])); //Setea el valor en el respectivo espacio al que pertenence
         
         Mensaje.append(System.getProperty("line.separator"));
         Mensaje.append("Despejamos a la incognita Y de la primera ecuacion y nos quedaria asi ");//Envio de informacion a la ventana donde mostraremos la solucion
@@ -1481,9 +1485,9 @@ public class Procedimientos {
         Mensaje.append("Operamos hasta despejar X y de esta manera encontraremos el valor de X");//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
         Mensaje.append("Este es el valor de X = ");//Envio de informacion a la ventana donde mostraremos la solucion
-        Mensaje.append(System.getProperty("line.separator"));
-        Thread.sleep(1000);//Hace una pausa de 1 segundo en la ejecucion del programa    
-	X.setText(Float.toString(ecuacion[1][1])); //Setea el valor en el respectivo espacio al que pertenence
+        Mensaje.append(System.getProperty("line.separator"));   
+	X.setText(formato.format(ecuacion[1][1]));
+        //X.setText(Float.toString(ecuacion[1][1])); //Setea el valor en el respectivo espacio al que pertenence
         Mensaje.append(" "+ecuacion[1][1]);//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
         Mensaje.append(System.getProperty("line.separator"));
@@ -1494,8 +1498,8 @@ public class Procedimientos {
         Mensaje.append(System.getProperty("line.separator"));
         Mensaje.append("Este es el valor de Y = ");//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
-        Thread.sleep(1000);//Hace una pausa de 1 segundo en la ejecucion del programa    
-	Y.setText(Float.toString(ecuacion[0][3])); //Setea el valor en el respectivo espacio al que pertenence
+        Y.setText(formato.format(ecuacion[0][3]));
+	//Y.setText(Float.toString(ecuacion[0][3])); //Setea el valor en el respectivo espacio al que pertenence
         Mensaje.append(" "+ecuacion[0][3]);//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
         Mensaje.append(System.getProperty("line.separator"));
@@ -1506,28 +1510,36 @@ public class Procedimientos {
         Mensaje.append(System.getProperty("line.separator"));
         Mensaje.append("Este es el valor de Z = ");//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
-        Thread.sleep(1000);//Hace una pausa de 1 segundo en la ejecucion del programa    
-	Z.setText(Float.toString(ecuacion[2][5])); //Setea el valor en el respectivo espacio al que pertenence
+        
+        
+        //Z.setText(Float.toString(ecuacion[2][5])); //Setea el valor en el respectivo espacio al que pertenence
         Mensaje.append(" "+ecuacion[2][5]);//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
-        
-                      
     }
     
     
     
     //Procedimiento para encontrar el factorial de un numero
     public void FACTORIAL(JTextField FACTORIAL, JTextField RESULTADO, JTextArea Mensaje) throws InterruptedException{
+        Mensaje.setText("");
         int n=0;
-        int resultado=0;
+        int resultado=1;
+        int resultado2=0;
         n = Integer.parseInt(FACTORIAL.getText());
+        Mensaje.append("El calculo del factorial de un numero, es el Producto de todos los numeros positivos");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("Desde 1 hasta n");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
         if (n>0)
             {for(int i=n;i!=0;i--)
-                {resultado=resultado*i;
-                    Mensaje.append(""+resultado+" = "+resultado+" * "+i);//Envio de informacion a la ventana donde mostraremos la solucion
+                {   resultado2=resultado*i;
+                    if(i!=n){
+                    Mensaje.append(""+resultado2+" = "+resultado+" * "+i);//Envio de informacion a la ventana donde mostraremos la solucion
                     Mensaje.append(System.getProperty("line.separator"));
-                    Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa 
-                    RESULTADO.setText(Integer.toString(i)); //Setea el valor en el respectivo espacio al que pertenence
+                    RESULTADO.setText(Integer.toString(resultado2)); //Setea el valor en el respectivo espacio al que pertenence
+                    }
+                    //resultado=resultado*i;
+                    resultado=resultado2;
                 }
             }
         else
@@ -1536,13 +1548,9 @@ public class Procedimientos {
                     Mensaje.append("por haber ingresado un 0 su resultado es 1");//Envio de informacion a la ventana donde mostraremos la solucion
                     Mensaje.append(System.getProperty("line.separator"));
                     n=1;
-                    RESULTADO.setText(Integer.toString(n)); //Setea el valor en el respectivo espacio al que pertenence
-                
+                    RESULTADO.setText(Integer.toString(n)); //Setea el valor en el respectivo espacio al que pertenence                
 		}
             }	
-
-        
-        
     }
     
     
