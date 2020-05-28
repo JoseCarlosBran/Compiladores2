@@ -5,6 +5,9 @@
  */
 package proyecto_compiladores;
 
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
+
 /**
  *
  * @author Bran
@@ -40,7 +43,8 @@ public class MultiMatriz_2x2 extends javax.swing.JFrame {
         C21 = new javax.swing.JTextField();
         A12 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        Mensaje = new javax.swing.JTextArea();
+        Multiplicar_Matriz = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,9 +66,16 @@ public class MultiMatriz_2x2 extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        Mensaje.setColumns(20);
+        Mensaje.setRows(5);
+        jScrollPane1.setViewportView(Mensaje);
+
+        Multiplicar_Matriz.setText("Multiplicar_Matriz");
+        Multiplicar_Matriz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Multiplicar_MatrizActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,6 +115,10 @@ public class MultiMatriz_2x2 extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(C12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(68, 68, 68))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Multiplicar_Matriz)
+                .addGap(186, 186, 186))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,7 +154,9 @@ public class MultiMatriz_2x2 extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(105, 105, 105)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addComponent(Multiplicar_Matriz)
+                .addGap(45, 45, 45))
         );
 
         pack();
@@ -156,6 +173,18 @@ public class MultiMatriz_2x2 extends javax.swing.JFrame {
     private void A11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_A11ActionPerformed
+
+    private void Multiplicar_MatrizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Multiplicar_MatrizActionPerformed
+        // TODO add your handling code here:
+        Procedimientos procedimiento= new Procedimientos();
+        
+        try {
+            procedimiento.MULTI_MATRIZ(A11, A12, A21, A22, B11, B12, B21, B22, C11, C12, C21, C22, Mensaje);
+        } catch (InterruptedException ex) {
+            java.util.logging.Logger.getLogger(MultiMatriz_2x2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_Multiplicar_MatrizActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,7 +235,8 @@ public class MultiMatriz_2x2 extends javax.swing.JFrame {
     private javax.swing.JTextField C12;
     private javax.swing.JTextField C21;
     private javax.swing.JTextField C22;
+    private javax.swing.JTextArea Mensaje;
+    private javax.swing.JButton Multiplicar_Matriz;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

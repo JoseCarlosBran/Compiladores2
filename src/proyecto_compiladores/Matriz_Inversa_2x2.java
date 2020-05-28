@@ -5,6 +5,9 @@
  */
 package proyecto_compiladores;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Bran
@@ -37,6 +40,7 @@ public class Matriz_Inversa_2x2 extends javax.swing.JFrame {
         A11 = new javax.swing.JTextField();
         A12 = new javax.swing.JTextField();
         jTextArea1 = new javax.swing.JTextArea();
+        Encontrar_Matriz_Inversa = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,12 +65,19 @@ public class Matriz_Inversa_2x2 extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
 
+        Encontrar_Matriz_Inversa.setText("Encontrar_Matriz_Inversa");
+        Encontrar_Matriz_Inversa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Encontrar_Matriz_InversaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(101, Short.MAX_VALUE)
+                .addContainerGap(102, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -93,7 +104,10 @@ public class Matriz_Inversa_2x2 extends javax.swing.JFrame {
                         .addGap(154, 154, 154))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(72, 72, 72))))
+                        .addGap(71, 71, 71))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Encontrar_Matriz_Inversa)
+                        .addGap(215, 215, 215))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,9 +135,11 @@ public class Matriz_Inversa_2x2 extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(A22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(A21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(Encontrar_Matriz_Inversa)
+                .addContainerGap())
         );
 
         pack();
@@ -140,6 +156,16 @@ public class Matriz_Inversa_2x2 extends javax.swing.JFrame {
     private void A11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_A11ActionPerformed
+
+    private void Encontrar_Matriz_InversaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Encontrar_Matriz_InversaActionPerformed
+        // TODO add your handling code here:
+        Procedimientos procedimiento= new Procedimientos();
+        try {
+            procedimiento.MATRIZ_INVERSA(A11, A12, A21, A22, B11, B12, B21, B22, Determinante, jTextArea1);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Matriz_Inversa_2x2.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Encontrar_Matriz_InversaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,6 +215,7 @@ public class Matriz_Inversa_2x2 extends javax.swing.JFrame {
     private javax.swing.JTextField B21;
     private javax.swing.JTextField B22;
     private javax.swing.JTextField Determinante;
+    private javax.swing.JButton Encontrar_Matriz_Inversa;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

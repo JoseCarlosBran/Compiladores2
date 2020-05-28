@@ -5,6 +5,9 @@
  */
 package proyecto_compiladores;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author user
@@ -30,6 +33,7 @@ public class factorial extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         FACTORIAL = new javax.swing.JTextField();
         RESULTADO = new javax.swing.JTextField();
+        Factorial = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,20 +52,32 @@ public class factorial extends javax.swing.JFrame {
             }
         });
 
+        Factorial.setText("Factorial");
+        Factorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FactorialActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(FACTORIAL, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78)
-                .addComponent(RESULTADO, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(286, 286, 286))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(62, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(FACTORIAL, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(78, 78, 78)
+                        .addComponent(RESULTADO, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(286, 286, 286))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Factorial)
+                        .addGap(209, 209, 209))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,7 +88,9 @@ public class factorial extends javax.swing.JFrame {
                     .addComponent(RESULTADO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(Factorial)
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();
@@ -85,6 +103,16 @@ public class factorial extends javax.swing.JFrame {
     private void RESULTADOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RESULTADOActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RESULTADOActionPerformed
+
+    private void FactorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FactorialActionPerformed
+        // TODO add your handling code here:
+        Procedimientos procedimiento= new Procedimientos();
+        try {
+            procedimiento.FACTORIAL(FACTORIAL, RESULTADO, jTextArea1);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(factorial.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_FactorialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,6 +151,7 @@ public class factorial extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField FACTORIAL;
+    private javax.swing.JButton Factorial;
     private javax.swing.JTextField RESULTADO;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

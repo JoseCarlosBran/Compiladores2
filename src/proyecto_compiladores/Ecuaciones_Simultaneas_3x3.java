@@ -5,6 +5,9 @@
  */
 package proyecto_compiladores;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Bran
@@ -56,6 +59,8 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
         B14 = new javax.swing.JTextField();
         B24 = new javax.swing.JTextField();
         B34 = new javax.swing.JTextField();
+        Matriz_Inversa = new javax.swing.JButton();
+        Sustitucion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,16 +86,27 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        Matriz_Inversa.setText("Matriz");
+        Matriz_Inversa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Matriz_InversaActionPerformed(evt);
+            }
+        });
+
+        Sustitucion.setText("Sustitucion");
+        Sustitucion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SustitucionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(148, Short.MAX_VALUE)
+                .addContainerGap(150, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(91, 91, 91))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -151,7 +167,15 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
                                 .addComponent(Y, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(X, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Z, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(146, 146, 146))))
+                        .addGap(146, 146, 146))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(89, 89, 89))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Matriz_Inversa)
+                        .addGap(35, 35, 35)
+                        .addComponent(Sustitucion)
+                        .addGap(291, 291, 291))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,9 +237,13 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
                         .addComponent(B24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(B34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(47, 47, 47)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Matriz_Inversa)
+                    .addComponent(Sustitucion))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -232,6 +260,26 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
     private void A11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_A11ActionPerformed
+
+    private void Matriz_InversaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Matriz_InversaActionPerformed
+        // TODO add your handling code here:
+        Procedimientos procedimiento= new Procedimientos();
+        try {
+            procedimiento.ECUACION_SIMULTANEA_MATRIZ_INVERSA(A11, A12, A13, A14, A21, A22, A23, A24, A31, A32, A33, A34, B11, B12, B13, B21, B22, B23, B31, B32, B33, X, Y, Z, jTextArea1);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Ecuaciones_Simultaneas_3x3.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Matriz_InversaActionPerformed
+
+    private void SustitucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SustitucionActionPerformed
+        // TODO add your handling code here:
+        Procedimientos procedimiento= new Procedimientos();
+        try {
+            procedimiento.ECUACION_SIMULTANEA_SUSTITUCION(A11, A12, A13, A14, A21, A22, A23, A24, A31, A32, A33, A34, B11, B12, B13, B14, B21, B22, B23, B24, B31, B32, B33, B34, X, Y, Z, jTextArea1);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Ecuaciones_Simultaneas_3x3.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_SustitucionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,6 +344,8 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
     private javax.swing.JTextField B32;
     private javax.swing.JTextField B33;
     private javax.swing.JTextField B34;
+    private javax.swing.JButton Matriz_Inversa;
+    private javax.swing.JButton Sustitucion;
     private javax.swing.JTextField X;
     private javax.swing.JTextField Y;
     private javax.swing.JTextField Z;

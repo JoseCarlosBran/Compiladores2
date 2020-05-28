@@ -24,7 +24,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace pref="101" max="32767" attributes="0"/>
+              <EmptySpace pref="102" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -58,7 +58,11 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="jTextArea1" min="-2" pref="488" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="Encontrar_Matriz_Inversa" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="215" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -100,9 +104,11 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="36" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jTextArea1" min="-2" pref="237" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+              <EmptySpace pref="30" max="32767" attributes="0"/>
+              <Component id="Encontrar_Matriz_Inversa" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -140,6 +146,14 @@
         <Property name="columns" type="int" value="20"/>
         <Property name="rows" type="int" value="5"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="Encontrar_Matriz_Inversa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Encontrar_Matriz_Inversa"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Encontrar_Matriz_InversaActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

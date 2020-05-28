@@ -5,6 +5,9 @@
  */
 package proyecto_compiladores;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Bran
@@ -40,9 +43,12 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
         B13 = new javax.swing.JTextField();
         B23 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        Mensaje = new javax.swing.JTextArea();
         A23 = new javax.swing.JTextField();
         A13 = new javax.swing.JTextField();
+        Reduccion = new javax.swing.JButton();
+        Sustitucion = new javax.swing.JButton();
+        Matriz = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,20 +64,38 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        Mensaje.setColumns(20);
+        Mensaje.setRows(5);
+        jScrollPane1.setViewportView(Mensaje);
+
+        Reduccion.setText("Reduccion");
+        Reduccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReduccionActionPerformed(evt);
+            }
+        });
+
+        Sustitucion.setText("Sustitucion");
+        Sustitucion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SustitucionActionPerformed(evt);
+            }
+        });
+
+        Matriz.setText("Matriz");
+        Matriz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MatrizActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(148, Short.MAX_VALUE)
+                .addContainerGap(142, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(91, 91, 91))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(A21, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -102,7 +126,18 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Y, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(X, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(210, 210, 210))))
+                        .addGap(210, 210, 210))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(97, 97, 97))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(378, 378, 378)
+                .addComponent(Reduccion)
+                .addGap(42, 42, 42)
+                .addComponent(Sustitucion)
+                .addGap(42, 42, 42)
+                .addComponent(Matriz)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,9 +173,14 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
                         .addComponent(A13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(A23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(84, 84, 84)
+                .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Reduccion)
+                    .addComponent(Sustitucion)
+                    .addComponent(Matriz))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         pack();
@@ -153,6 +193,36 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
     private void XActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_XActionPerformed
+
+    private void ReduccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReduccionActionPerformed
+        // TODO add your handling code here:
+        Procedimientos procedimiento= new Procedimientos();
+        try {
+            procedimiento.ECUACION_SIMULTANEA_SUMA(A11, A12, A13, A21, A22, A23, B11, B12, B13, B21, B22, B23, X, Y, Mensaje);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Ecuaciones_Simultaneas_2x2.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_ReduccionActionPerformed
+
+    private void SustitucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SustitucionActionPerformed
+        // TODO add your handling code here:
+        Procedimientos procedimiento= new Procedimientos();
+        try {
+            procedimiento.ECUACION_SIMULTANEA_SUSTITUCION(A11, A12, A13, A21, A22, A23, B11, B12, B13, B21, B22, B23, X, Y, Mensaje);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Ecuaciones_Simultaneas_2x2.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_SustitucionActionPerformed
+
+    private void MatrizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MatrizActionPerformed
+        // TODO add your handling code here:
+        Procedimientos procedimiento= new Procedimientos();
+        try {
+            procedimiento.ECUACION_SIMULTANEA_MATRIZ_INVERSA(A11, A12, A13, A21, A22, A23, B11, B12, B21, B22, X, Y, Mensaje);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Ecuaciones_Simultaneas_2x2.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_MatrizActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,9 +279,12 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
     private javax.swing.JTextField B21;
     private javax.swing.JTextField B22;
     private javax.swing.JTextField B23;
+    private javax.swing.JButton Matriz;
+    private javax.swing.JTextArea Mensaje;
+    private javax.swing.JButton Reduccion;
+    private javax.swing.JButton Sustitucion;
     private javax.swing.JTextField X;
     private javax.swing.JTextField Y;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
