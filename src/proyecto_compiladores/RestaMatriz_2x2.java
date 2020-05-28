@@ -42,8 +42,8 @@ public class RestaMatriz_2x2 extends javax.swing.JFrame {
         C12 = new javax.swing.JTextField();
         C22 = new javax.swing.JTextField();
         C21 = new javax.swing.JTextField();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        Mensaje = new javax.swing.JTextArea();
+        Restar_Matriz = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,13 +65,13 @@ public class RestaMatriz_2x2 extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
+        Mensaje.setColumns(20);
+        Mensaje.setRows(5);
 
-        jButton1.setText("REGRESAR AL MENU");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Restar_Matriz.setText("Restar_Matriz");
+        Restar_Matriz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                Restar_MatrizActionPerformed(evt);
             }
         });
 
@@ -114,8 +114,8 @@ public class RestaMatriz_2x2 extends javax.swing.JFrame {
                         .addComponent(C12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(68, 68, 68))
             .addGroup(layout.createSequentialGroup()
-                .addGap(240, 240, 240)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(292, 292, 292)
+                .addComponent(Restar_Matriz)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -151,10 +151,10 @@ public class RestaMatriz_2x2 extends javax.swing.JFrame {
                                     .addComponent(A21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(107, 107, 107)
-                        .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(64, 64, 64))
+                        .addComponent(Mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addComponent(Restar_Matriz)
+                .addGap(42, 42, 42))
         );
 
         pack();
@@ -172,15 +172,15 @@ public class RestaMatriz_2x2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_C11ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void Restar_MatrizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Restar_MatrizActionPerformed
         // TODO add your handling code here:
-        
-        bienvenida pantalla = new bienvenida();//Crea un objeto de la clase Bienvenida
-        pantalla.setVisible(true);//Hace que el jframe que estas llamando sea visible
-        this.setVisible(false);//Hace que el jframe actual no sea visible.
-        pantalla.setLocationRelativeTo(null);//coloca el jframe al centro de la pantalla del Usuario
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+        Procedimientos procedimiento= new Procedimientos();
+        try {
+            procedimiento.RESTA_MATRIZ(A11, A12, A21, A22, B11, B12, B21, B22, C11, C12, C21, C22, Mensaje);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(RestaMatriz_2x2.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Restar_MatrizActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,6 +233,7 @@ public class RestaMatriz_2x2 extends javax.swing.JFrame {
     private javax.swing.JTextField C12;
     private javax.swing.JTextField C21;
     private javax.swing.JTextField C22;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea Mensaje;
+    private javax.swing.JButton Restar_Matriz;
     // End of variables declaration//GEN-END:variables
+}

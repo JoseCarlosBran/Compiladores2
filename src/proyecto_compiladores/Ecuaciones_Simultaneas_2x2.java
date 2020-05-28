@@ -89,13 +89,6 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("REGRESAR AL MENU");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,6 +97,10 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
                 .addContainerGap(142, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(A21, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(A11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(A22, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(A12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -132,10 +129,14 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
                         .addGap(210, 210, 210))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(91, 91, 91))))
+                        .addGap(97, 97, 97))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(315, 315, 315)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(378, 378, 378)
+                .addComponent(Reduccion)
+                .addGap(42, 42, 42)
+                .addComponent(Sustitucion)
+                .addGap(42, 42, 42)
+                .addComponent(Matriz)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -174,9 +175,12 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
                         .addComponent(A23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Reduccion)
+                    .addComponent(Sustitucion)
+                    .addComponent(Matriz))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         pack();
@@ -190,15 +194,35 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_XActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ReduccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReduccionActionPerformed
         // TODO add your handling code here:
-        
-        bienvenida pantalla = new bienvenida();//Crea un objeto de la clase Bienvenida
-        pantalla.setVisible(true);//Hace que el jframe que estas llamando sea visible
-        this.setVisible(false);//Hace que el jframe actual no sea visible.
-        pantalla.setLocationRelativeTo(null);//coloca el jframe al centro de la pantalla del Usuario
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+        Procedimientos procedimiento= new Procedimientos();
+        try {
+            procedimiento.ECUACION_SIMULTANEA_SUMA(A11, A12, A13, A21, A22, A23, B11, B12, B13, B21, B22, B23, X, Y, Mensaje);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Ecuaciones_Simultaneas_2x2.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_ReduccionActionPerformed
+
+    private void SustitucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SustitucionActionPerformed
+        // TODO add your handling code here:
+        Procedimientos procedimiento= new Procedimientos();
+        try {
+            procedimiento.ECUACION_SIMULTANEA_SUSTITUCION(A11, A12, A13, A21, A22, A23, B11, B12, B13, B21, B22, B23, X, Y, Mensaje);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Ecuaciones_Simultaneas_2x2.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_SustitucionActionPerformed
+
+    private void MatrizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MatrizActionPerformed
+        // TODO add your handling code here:
+        Procedimientos procedimiento= new Procedimientos();
+        try {
+            procedimiento.ECUACION_SIMULTANEA_MATRIZ_INVERSA(A11, A12, A13, A21, A22, A23, B11, B12, B21, B22, X, Y, Mensaje);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Ecuaciones_Simultaneas_2x2.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_MatrizActionPerformed
 
     /**
      * @param args the command line arguments
@@ -261,7 +285,6 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
     private javax.swing.JButton Sustitucion;
     private javax.swing.JTextField X;
     private javax.swing.JTextField Y;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
