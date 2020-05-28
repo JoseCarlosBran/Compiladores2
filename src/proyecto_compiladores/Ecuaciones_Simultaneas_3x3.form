@@ -116,7 +116,9 @@
                       <Component id="Matriz_Inversa" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="Sustitucion" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="291" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      <Component id="Regresar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -203,6 +205,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="Matriz_Inversa" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Sustitucion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Regresar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="30" max="32767" attributes="0"/>
           </Group>
@@ -299,12 +302,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SustitucionActionPerformed"/>
-    <Component class="javax.swing.JButton" name="jButton1">
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="Regresar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="REGRESAR AL MENU"/>
+        <Property name="text" type="java.lang.String" value="Regresar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RegresarActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

@@ -49,6 +49,7 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
         Reduccion = new javax.swing.JButton();
         Sustitucion = new javax.swing.JButton();
         Matriz = new javax.swing.JButton();
+        Regresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,6 +87,13 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
         Matriz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MatrizActionPerformed(evt);
+            }
+        });
+
+        Regresar.setText("Regresar");
+        Regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegresarActionPerformed(evt);
             }
         });
 
@@ -137,7 +145,9 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
                 .addComponent(Sustitucion)
                 .addGap(42, 42, 42)
                 .addComponent(Matriz)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
+                .addComponent(Regresar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +189,8 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Reduccion)
                     .addComponent(Sustitucion)
-                    .addComponent(Matriz))
+                    .addComponent(Matriz)
+                    .addComponent(Regresar))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
 
@@ -223,6 +234,14 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
             Logger.getLogger(Ecuaciones_Simultaneas_2x2.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_MatrizActionPerformed
+
+    private void RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarActionPerformed
+        // TODO add your handling code here:
+        bienvenida pantalla = new bienvenida();//Crea un objeto de la clase MultiMatriz_3x3
+        pantalla.setVisible(true);//Hace que el jframe que estas llamando sea visible
+        this.setVisible(false);//Hace que el jframe actual no sea visible.
+        pantalla.setLocationRelativeTo(null);//coloca el jframe al centro de la pantalla del Usuario
+    }//GEN-LAST:event_RegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -282,6 +301,7 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
     private javax.swing.JButton Matriz;
     private javax.swing.JTextArea Mensaje;
     private javax.swing.JButton Reduccion;
+    private javax.swing.JButton Regresar;
     private javax.swing.JButton Sustitucion;
     private javax.swing.JTextField X;
     private javax.swing.JTextField Y;

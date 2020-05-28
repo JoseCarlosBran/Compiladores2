@@ -60,6 +60,7 @@ public class RestaMatriz_3x3 extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Mensaje = new javax.swing.JTextArea();
         Restar_Matriz = new javax.swing.JButton();
+        Regresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,6 +90,13 @@ public class RestaMatriz_3x3 extends javax.swing.JFrame {
         Restar_Matriz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Restar_MatrizActionPerformed(evt);
+            }
+        });
+
+        Regresar.setText("Regresar");
+        Regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegresarActionPerformed(evt);
             }
         });
 
@@ -168,7 +176,9 @@ public class RestaMatriz_3x3 extends javax.swing.JFrame {
                         .addGap(91, 91, 91))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(Restar_Matriz)
-                        .addGap(296, 296, 296))))
+                        .addGap(51, 51, 51)
+                        .addComponent(Regresar)
+                        .addGap(174, 174, 174))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,7 +243,9 @@ public class RestaMatriz_3x3 extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(Restar_Matriz)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Restar_Matriz)
+                    .addComponent(Regresar))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -261,6 +273,14 @@ public class RestaMatriz_3x3 extends javax.swing.JFrame {
             Logger.getLogger(RestaMatriz_3x3.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Restar_MatrizActionPerformed
+
+    private void RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarActionPerformed
+        // TODO add your handling code here:
+        bienvenida pantalla = new bienvenida();//Crea un objeto de la clase MultiMatriz_3x3
+        pantalla.setVisible(true);//Hace que el jframe que estas llamando sea visible
+        this.setVisible(false);//Hace que el jframe actual no sea visible.
+        pantalla.setLocationRelativeTo(null);//coloca el jframe al centro de la pantalla del Usuario
+    }//GEN-LAST:event_RegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -326,6 +346,7 @@ public class RestaMatriz_3x3 extends javax.swing.JFrame {
     private javax.swing.JTextField C32;
     private javax.swing.JTextField C33;
     private javax.swing.JTextArea Mensaje;
+    private javax.swing.JButton Regresar;
     private javax.swing.JButton Restar_Matriz;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

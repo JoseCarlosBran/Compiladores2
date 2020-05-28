@@ -59,7 +59,9 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
         B14 = new javax.swing.JTextField();
         B24 = new javax.swing.JTextField();
         B34 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        Matriz_Inversa = new javax.swing.JButton();
+        Sustitucion = new javax.swing.JButton();
+        Regresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,10 +87,24 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jButton1.setText("REGRESAR AL MENU");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Matriz_Inversa.setText("Matriz");
+        Matriz_Inversa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                Matriz_InversaActionPerformed(evt);
+            }
+        });
+
+        Sustitucion.setText("Sustitucion");
+        Sustitucion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SustitucionActionPerformed(evt);
+            }
+        });
+
+        Regresar.setText("Regresar");
+        Regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegresarActionPerformed(evt);
             }
         });
 
@@ -164,8 +180,12 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(89, 89, 89))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(318, 318, 318))))
+                        .addComponent(Matriz_Inversa)
+                        .addGap(35, 35, 35)
+                        .addComponent(Sustitucion)
+                        .addGap(43, 43, 43)
+                        .addComponent(Regresar)
+                        .addGap(177, 177, 177))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,10 +247,13 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
                         .addComponent(B24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(B34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Matriz_Inversa)
+                    .addComponent(Sustitucion)
+                    .addComponent(Regresar))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -249,16 +272,33 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_A11ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void Matriz_InversaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Matriz_InversaActionPerformed
         // TODO add your handling code here:
-        
-        bienvenida pantalla = new bienvenida();//Crea un objeto de la clase Bienvenida
+        Procedimientos procedimiento= new Procedimientos();
+        try {
+            procedimiento.ECUACION_SIMULTANEA_MATRIZ_INVERSA(A11, A12, A13, A14, A21, A22, A23, A24, A31, A32, A33, A34, B11, B12, B13, B21, B22, B23, B31, B32, B33, X, Y, Z, jTextArea1);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Ecuaciones_Simultaneas_3x3.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Matriz_InversaActionPerformed
+
+    private void SustitucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SustitucionActionPerformed
+        // TODO add your handling code here:
+        Procedimientos procedimiento= new Procedimientos();
+        try {
+            procedimiento.ECUACION_SIMULTANEA_SUSTITUCION(A11, A12, A13, A14, A21, A22, A23, A24, A31, A32, A33, A34, B11, B12, B13, B14, B21, B22, B23, B24, B31, B32, B33, B34, X, Y, Z, jTextArea1);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Ecuaciones_Simultaneas_3x3.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_SustitucionActionPerformed
+
+    private void RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarActionPerformed
+        // TODO add your handling code here:
+        bienvenida pantalla = new bienvenida();//Crea un objeto de la clase MultiMatriz_3x3
         pantalla.setVisible(true);//Hace que el jframe que estas llamando sea visible
         this.setVisible(false);//Hace que el jframe actual no sea visible.
         pantalla.setLocationRelativeTo(null);//coloca el jframe al centro de la pantalla del Usuario
-        
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_RegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -324,11 +364,11 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
     private javax.swing.JTextField B33;
     private javax.swing.JTextField B34;
     private javax.swing.JButton Matriz_Inversa;
+    private javax.swing.JButton Regresar;
     private javax.swing.JButton Sustitucion;
     private javax.swing.JTextField X;
     private javax.swing.JTextField Y;
     private javax.swing.JTextField Z;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

@@ -52,6 +52,7 @@ public class Matriz_Inversa_3x3 extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         Encontrar_Matriz_Inversa = new javax.swing.JButton();
+        Regresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,6 +76,13 @@ public class Matriz_Inversa_3x3 extends javax.swing.JFrame {
         Encontrar_Matriz_Inversa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Encontrar_Matriz_InversaActionPerformed(evt);
+            }
+        });
+
+        Regresar.setText("Regresar");
+        Regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegresarActionPerformed(evt);
             }
         });
 
@@ -137,7 +145,9 @@ public class Matriz_Inversa_3x3 extends javax.swing.JFrame {
                         .addGap(247, 247, 247))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(Encontrar_Matriz_Inversa)
-                        .addGap(294, 294, 294))))
+                        .addGap(45, 45, 45)
+                        .addComponent(Regresar)
+                        .addGap(178, 178, 178))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,7 +196,9 @@ public class Matriz_Inversa_3x3 extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(Encontrar_Matriz_Inversa)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Encontrar_Matriz_Inversa)
+                    .addComponent(Regresar))
                 .addGap(20, 20, 20))
         );
 
@@ -210,6 +222,14 @@ public class Matriz_Inversa_3x3 extends javax.swing.JFrame {
             Logger.getLogger(Matriz_Inversa_3x3.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Encontrar_Matriz_InversaActionPerformed
+
+    private void RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarActionPerformed
+        // TODO add your handling code here:
+        bienvenida pantalla = new bienvenida();//Crea un objeto de la clase MultiMatriz_3x3
+        pantalla.setVisible(true);//Hace que el jframe que estas llamando sea visible
+        this.setVisible(false);//Hace que el jframe actual no sea visible.
+        pantalla.setLocationRelativeTo(null);//coloca el jframe al centro de la pantalla del Usuario
+    }//GEN-LAST:event_RegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -274,6 +294,7 @@ public class Matriz_Inversa_3x3 extends javax.swing.JFrame {
     private javax.swing.JTextField B33;
     private javax.swing.JTextField Determinante;
     private javax.swing.JButton Encontrar_Matriz_Inversa;
+    private javax.swing.JButton Regresar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
