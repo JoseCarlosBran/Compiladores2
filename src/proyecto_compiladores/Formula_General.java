@@ -34,6 +34,7 @@ public class Formula_General extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         A14 = new javax.swing.JTextField();
         Resultado_2 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,6 +51,13 @@ public class Formula_General extends javax.swing.JFrame {
         Resultado_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Resultado_2ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("REGRESAR AL MENU");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -73,7 +81,10 @@ public class Formula_General extends javax.swing.JFrame {
                         .addComponent(Resultado_1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(Resultado_2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(287, 287, 287))))
+                        .addGap(287, 287, 287))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(320, 320, 320))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,9 +97,11 @@ public class Formula_General extends javax.swing.JFrame {
                         .addComponent(A14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Resultado_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Resultado_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(74, 74, 74)
+                .addGap(48, 48, 48)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addComponent(jButton1)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -101,6 +114,16 @@ public class Formula_General extends javax.swing.JFrame {
     private void Resultado_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Resultado_2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Resultado_2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        bienvenida pantalla = new bienvenida();//Crea un objeto de la clase Bienvenida
+        pantalla.setVisible(true);//Hace que el jframe que estas llamando sea visible
+        this.setVisible(false);//Hace que el jframe actual no sea visible.
+        pantalla.setLocationRelativeTo(null);//coloca el jframe al centro de la pantalla del Usuario
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,6 +181,7 @@ public class Formula_General extends javax.swing.JFrame {
     private javax.swing.JTextField A14;
     private javax.swing.JTextField Resultado_1;
     private javax.swing.JTextField Resultado_2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
