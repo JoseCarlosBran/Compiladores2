@@ -5,6 +5,9 @@
  */
 package proyecto_compiladores;
 
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
+
 /**
  *
  * @author Bran
@@ -232,6 +235,4 @@ public class MultiMatriz_2x2 extends javax.swing.JFrame {
     private javax.swing.JTextField C22;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
-}

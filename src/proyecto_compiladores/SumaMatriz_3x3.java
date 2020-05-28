@@ -5,6 +5,9 @@
  */
 package proyecto_compiladores;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Bran
@@ -78,9 +81,16 @@ public class SumaMatriz_3x3 extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        Mensaje.setColumns(20);
+        Mensaje.setRows(5);
+        jScrollPane1.setViewportView(Mensaje);
+
+        Sumar_Matriz.setText("Sumar_Matriz");
+        Sumar_Matriz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Sumar_MatrizActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("REGRESAR AL MENU");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -326,6 +336,4 @@ public class SumaMatriz_3x3 extends javax.swing.JFrame {
     private javax.swing.JTextField C33;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
-}

@@ -5,6 +5,9 @@
  */
 package proyecto_compiladores;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Bran
@@ -325,6 +328,4 @@ public class RestaMatriz_3x3 extends javax.swing.JFrame {
     private javax.swing.JTextField C33;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
-}

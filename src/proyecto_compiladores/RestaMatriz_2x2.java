@@ -5,6 +5,9 @@
  */
 package proyecto_compiladores;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Bran
@@ -98,7 +101,7 @@ public class RestaMatriz_2x2 extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(B12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -233,4 +236,3 @@ public class RestaMatriz_2x2 extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
-}

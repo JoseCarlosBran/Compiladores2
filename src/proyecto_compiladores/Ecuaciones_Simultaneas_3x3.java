@@ -5,6 +5,9 @@
  */
 package proyecto_compiladores;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Bran
@@ -320,6 +323,8 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
     private javax.swing.JTextField B32;
     private javax.swing.JTextField B33;
     private javax.swing.JTextField B34;
+    private javax.swing.JButton Matriz_Inversa;
+    private javax.swing.JButton Sustitucion;
     private javax.swing.JTextField X;
     private javax.swing.JTextField Y;
     private javax.swing.JTextField Z;

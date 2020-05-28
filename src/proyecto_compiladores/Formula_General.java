@@ -31,7 +31,7 @@ public class Formula_General extends javax.swing.JFrame {
         A12 = new javax.swing.JTextField();
         A13 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        Mensaje = new javax.swing.JTextArea();
         A14 = new javax.swing.JTextField();
         Resultado_2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -44,9 +44,9 @@ public class Formula_General extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        Mensaje.setColumns(20);
+        Mensaje.setRows(5);
+        jScrollPane1.setViewportView(Mensaje);
 
         Resultado_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,10 +179,10 @@ public class Formula_General extends javax.swing.JFrame {
     private javax.swing.JTextField A12;
     private javax.swing.JTextField A13;
     private javax.swing.JTextField A14;
+    private javax.swing.JTextArea Mensaje;
     private javax.swing.JTextField Resultado_1;
     private javax.swing.JTextField Resultado_2;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

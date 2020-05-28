@@ -5,6 +5,9 @@
  */
 package proyecto_compiladores;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Bran
@@ -57,6 +60,7 @@ public class MultiMatriz_3x3 extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
+        Multiplicar_Matriz = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,6 +90,13 @@ public class MultiMatriz_3x3 extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        Multiplicar_Matriz.setText("Multiplicar_Matriz");
+        Multiplicar_Matriz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Multiplicar_MatrizActionPerformed(evt);
             }
         });
 
@@ -230,7 +241,9 @@ public class MultiMatriz_3x3 extends javax.swing.JFrame {
                 .addGap(47, 47, 47)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(Multiplicar_Matriz))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -256,6 +269,16 @@ public class MultiMatriz_3x3 extends javax.swing.JFrame {
         this.setVisible(false);//Hace que el jframe actual no sea visible.
         pantalla.setLocationRelativeTo(null);//coloca el jframe al centro de la pantalla del Usuario
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void Multiplicar_MatrizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Multiplicar_MatrizActionPerformed
+        // TODO add your handling code here:
+        Procedimientos procedimiento= new Procedimientos();
+        try {
+            procedimiento.MULTI_MATRIZ(A11, A12, A13, A21, A22, A23, A31, A32, A33, B11, B12, B13, B21, B22, B23, B31, B32, B33, C11, C12, C13, C21, C22, C23, C31, C32, C33, jTextArea1);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MultiMatriz_3x3.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Multiplicar_MatrizActionPerformed
 
     /**
      * @param args the command line arguments
@@ -323,6 +346,7 @@ public class MultiMatriz_3x3 extends javax.swing.JFrame {
     private javax.swing.JTextField C31;
     private javax.swing.JTextField C32;
     private javax.swing.JTextField C33;
+    private javax.swing.JButton Multiplicar_Matriz;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
