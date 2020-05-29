@@ -60,7 +60,6 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
         B24 = new javax.swing.JTextField();
         B34 = new javax.swing.JTextField();
         Matriz_Inversa = new javax.swing.JButton();
-        Sustitucion = new javax.swing.JButton();
         Regresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -91,13 +90,6 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
         Matriz_Inversa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Matriz_InversaActionPerformed(evt);
-            }
-        });
-
-        Sustitucion.setText("Sustitucion");
-        Sustitucion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SustitucionActionPerformed(evt);
             }
         });
 
@@ -181,9 +173,7 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
                         .addGap(89, 89, 89))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(Matriz_Inversa)
-                        .addGap(35, 35, 35)
-                        .addComponent(Sustitucion)
-                        .addGap(43, 43, 43)
+                        .addGap(52, 52, 52)
                         .addComponent(Regresar)
                         .addGap(177, 177, 177))))
         );
@@ -252,7 +242,6 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Matriz_Inversa)
-                    .addComponent(Sustitucion)
                     .addComponent(Regresar))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
@@ -276,21 +265,14 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
         // TODO add your handling code here:
         Procedimientos procedimiento= new Procedimientos();
         try {
+            B14.setText("");
+            B24.setText("");
+            B34.setText("");
             procedimiento.ECUACION_SIMULTANEA_MATRIZ_INVERSA(A11, A12, A13, A14, A21, A22, A23, A24, A31, A32, A33, A34, B11, B12, B13, B21, B22, B23, B31, B32, B33, X, Y, Z, jTextArea1);
         } catch (InterruptedException ex) {
             Logger.getLogger(Ecuaciones_Simultaneas_3x3.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Matriz_InversaActionPerformed
-
-    private void SustitucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SustitucionActionPerformed
-        // TODO add your handling code here:
-        Procedimientos procedimiento= new Procedimientos();
-        try {
-            procedimiento.ECUACION_SIMULTANEA_SUSTITUCION(A11, A12, A13, A14, A21, A22, A23, A24, A31, A32, A33, A34, B11, B12, B13, B14, B21, B22, B23, B24, B31, B32, B33, B34, X, Y, Z, jTextArea1);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Ecuaciones_Simultaneas_3x3.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_SustitucionActionPerformed
 
     private void RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarActionPerformed
         // TODO add your handling code here:
@@ -365,7 +347,6 @@ public class Ecuaciones_Simultaneas_3x3 extends javax.swing.JFrame {
     private javax.swing.JTextField B34;
     private javax.swing.JButton Matriz_Inversa;
     private javax.swing.JButton Regresar;
-    private javax.swing.JButton Sustitucion;
     private javax.swing.JTextField X;
     private javax.swing.JTextField Y;
     private javax.swing.JTextField Z;

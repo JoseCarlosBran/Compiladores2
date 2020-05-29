@@ -5,6 +5,7 @@
  */
 package proyecto_compiladores;
 
+import static java.lang.Math.sqrt;
 import java.text.DecimalFormat;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -418,19 +419,21 @@ public class Procedimientos {
         
 
         //Declarar la Matriz A
-        float[][] matriz1 = new float[2][2];
+        float[][] matriz1 = new float[3][3];
         //Declarar la Matriz B
-        float[][] matriz2 = new float[2][2];
+        float[][] matriz2 = new float[3][3];
         //Declarar la Matriz Resultante
-        float[][] matrizR = new float[2][2];
+        float[][] matrizR = new float[3][3];
         //Asignar valores
 
         matriz1[0][0]=Float.parseFloat(A11.getText());
         matriz1[0][1]=Float.parseFloat(A12.getText());
         matriz1[0][2]=Float.parseFloat(A13.getText()); 
+        
         matriz1[1][0]=Float.parseFloat(A21.getText());
         matriz1[1][1]=Float.parseFloat(A22.getText());
         matriz1[1][2]=Float.parseFloat(A23.getText());
+        
         matriz1[2][0]=Float.parseFloat(A31.getText());
         matriz1[2][1]=Float.parseFloat(A32.getText());
         matriz1[2][2]=Float.parseFloat(A33.getText());
@@ -473,7 +476,6 @@ public class Procedimientos {
                     if(i==0 && x==0 && j==0){
                         Mensaje.append("1ro. Multiplicamos el coeficiente A11: "+A11.getText()+" * el coeficiente B11: "+B11.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
                         C11.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego seteamos el valor en C11: "+C11.getText());
                         Mensaje.append(System.getProperty("line.separator"));
@@ -481,7 +483,6 @@ public class Procedimientos {
                     if(i==0 && x==1 && j==0){
                         Mensaje.append("2Do. Multiplicamos el coeficiente A12: "+A12.getText()+" * el coeficiente B21: "+B21.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
                         C11.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego sumamos el resultado en C11: "+C11.getText());
                         Mensaje.append(System.getProperty("line.separator"));
@@ -489,15 +490,13 @@ public class Procedimientos {
                     if(i==0 && x==2 && j==0){
                         Mensaje.append("3ro. Multiplicamos el coeficiente A13: "+A13.getText()+" * el coeficiente B22: "+B22.getText());//Envio de informacion a la ventana donde mostraremos la solucion
                         Mensaje.append(System.getProperty("line.separator"));  
-                        Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
                         C11.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
                         Mensaje.append("Luego sumamos el resultado en C11: "+C11.getText());
                         Mensaje.append(System.getProperty("line.separator"));
                         Mensaje.append("Hacemos lo mismo con el resto de filas y columnas");
                         Mensaje.append(System.getProperty("line.separator"));
                     }
-                    Thread.sleep(500);//Hace una pausa de 1/2 segundo en la ejecucion del programa
-		}
+                }
             if(i==0 && j==1){
                 C12.setText(formato.format(matrizR[i][j])); //Setea el valor en el respectivo espacio al que pertenence
             }
@@ -860,6 +859,7 @@ public class Procedimientos {
     public void ECUACION_SIMULTANEA_MATRIZ_INVERSA(JTextField A11, JTextField A12, JTextField A13, JTextField A21, JTextField A22, JTextField A23, JTextField B11, JTextField B12, JTextField B21, JTextField B22, JTextField X, JTextField Y, JTextArea Mensaje) throws InterruptedException{
         //Limpiar el mensaje
         Mensaje.setText("");
+        
         //Declarar formato para los float
         DecimalFormat formato = new DecimalFormat("#.##");
         
@@ -1182,7 +1182,7 @@ public class Procedimientos {
         ecuacion[1][4]=Float.parseFloat(A23.getText());
         Mensaje.append("Solucionar un sistema de ecuaciones de 2x2 por medio del");//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
-        Mensaje.append("Metodo de la Suma y Resta");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append("Metodo de Reduccion");//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
         //Mostrar la En matriz B
         B11.setText(Float.toString(ecuacion[0][0])); //Setea el valor en el respectivo espacio al que pertenence
@@ -1203,20 +1203,18 @@ public class Procedimientos {
 	for(int j=0;j<5;j++)
             {ecuacion[0][j]=ecuacion[0][j]*ecuacion[1][2];
             }
-	for(int j=0;j<5;j++)
-            {ecuacion[1][j]=ecuacion[1][j]*(-ecuaciona[2]);
-            }
-        Mensaje.append("Proceso para eliminar Y");//Envio de informacion a la ventana donde mostraremos la solucion
+	Mensaje.append("Proceso para eliminar Y");//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
 	Mensaje.append("Multiplicamos el valor de Y de la segunda ecuacion por la 1ra. Ecuacion");//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
-        B11.setText(Float.toString(ecuacion[0][0])); //Setea el valor en el respectivo espacio al que pertenence
-        B12.setText(Float.toString(ecuacion[0][2])); //Setea el valor en el respectivo espacio al que pertenence
-        B13.setText(Float.toString(ecuacion[0][4])); //Setea el valor en el respectivo espacio al que pertenence
+        Mensaje.append(ecuacion[0][0]+" + "+ecuacion[0][2]+" = "+ecuacion[0][4]);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        for(int j=0;j<5;j++)
+            {ecuacion[1][j]=ecuacion[1][j]*(-ecuaciona[2]);
+            }
         Mensaje.append("Multiplicamos el valor de Y de la primera ecuacion por la 2da. Ecuacion");//Envio de informacion a la ventana donde mostraremos la solucion
-        B21.setText(Float.toString(ecuacion[1][0])); //Setea el valor en el respectivo espacio al que pertenence
-        B22.setText(Float.toString(ecuacion[1][2])); //Setea el valor en el respectivo espacio al que pertenence
-        B23.setText(Float.toString(ecuacion[1][4])); //Setea el valor en el respectivo espacio al que pertenence
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append(ecuacion[1][0]+" + "+ecuacion[1][2]+" = "+ecuacion[1][4]);//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
         Mensaje.append("Esta es su ecuacion modificada para eliminar a Y");//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
@@ -1227,10 +1225,7 @@ public class Procedimientos {
 	{ecuacion[1][j]=ecuacion[0][j]+ecuacion[1][j];
 	}
 	//Proceso de lo que se le va a mostrar al usuario
-	Mensaje.append("Multiplicamos el valor de Y de la primera ecuacion por la 2da. Ecuacion");//Envio de informacion a la ventana donde mostraremos la solucion
-        B21.setText(Float.toString(ecuacion[1][0])); //Setea el valor en el respectivo espacio al que pertenence
-        B22.setText(Float.toString(ecuacion[1][2])); //Setea el valor en el respectivo espacio al que pertenence
-        B23.setText(Float.toString(ecuacion[1][4])); //Setea el valor en el respectivo espacio al que pertenence
+	Mensaje.append(ecuacion[1][0]+" + "+ecuacion[1][2]+" = "+ecuacion[1][4]);//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
         Mensaje.append("Luego Dividimos el coeficiente"+ecuacion[1][4]);//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));		
@@ -1261,8 +1256,6 @@ public class Procedimientos {
         Mensaje.append(System.getProperty("line.separator"));
         Mensaje.append("Operamos y encontraremos el valor de Y ");//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
-        
-        B23.setText(Float.toString(ecuacion[1][4])); //Setea el valor en el respectivo espacio al que pertenence
         Y.setText(formato.format(y));
         //Y.setText(Float.toString(y)); //Setea el valor en el respectivo espacio al que pertenence
         Mensaje.append("Este es el valor de Y "+y);//Envio de informacion a la ventana donde mostraremos la solucion
@@ -1329,7 +1322,7 @@ public class Procedimientos {
         Mensaje.append(System.getProperty("line.separator"));
         Mensaje.append("Asi quedaria la segunda ecuacion:");//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
-        Mensaje.append(ecuacion[1][0]+"X + ("+ecuacion[1][2]+" por ("+ecuacion[0][4]+" - ("+ecuacion[0][0]+"X )"+"dividido    "+ecuacion[0][2]+")) = "+ecuacion[1][4]);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(A21.getText()+"X + ("+ecuacion[1][2]+" por ("+ecuacion[0][4]+" - ("+ecuacion[0][0]+"X )"+"dividido    "+ecuacion[0][2]+")) = "+ecuacion[1][4]);//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
         Mensaje.append("Operamos hasta despejar X y de esta manera encontraremos el valor de X");//Envio de informacion a la ventana donde mostraremos la solucion
         Mensaje.append(System.getProperty("line.separator"));
@@ -1555,9 +1548,100 @@ public class Procedimientos {
     
     
     
+   public void Descomposicion_Factores(JTextField B, JTextField C, JTextField Resultado_1, JTextField Resultado_2, JTextArea Mensaje){
+       Mensaje.setText("");
+       
+       Mensaje.append("Usted selecciono resolver su ecuacion cuadratica por medio de Descomposicion de Factores");//Envio de informacion a la ventana donde mostraremos la solucion
+       Mensaje.append(System.getProperty("line.separator"));
+       
+       int b,c,num1 = 0,num2=0;
+       b=Integer.parseInt(B.getText());
+       c=Integer.parseInt(B.getText());
+       
+       for(int i=0;i<=100;i++)
+            {for(int j=0;j<=100;j++)
+		{if(((i*j)==c) || ((i*j)==-c))
+                    {if((-i+j)==b)
+			{num1=-i;
+			num2=j;
+			i=101;
+			j=101;
+			}
+                    if((i-j)==b)
+			{num1=-j;
+			num2=i;
+			i=101;
+			j=101;
+			}
+                    }
+		}
+            }
+       num1=num1*(-1);
+       num2=num2*(-1);
+        Resultado_1.setText(Integer.toString(num1)); //Setea el valor en el respectivo espacio al que pertenence
+        Resultado_2.setText(Integer.toString(num2)); //Setea el valor en el respectivo espacio al que pertenence
+   } 
     
     
-    
+   public void Formula_General(JTextField A, JTextField B, JTextField C, JTextField Resultado_1, JTextField Resultado_2, JTextArea Mensaje){
+       //Declarar formato para los float
+        DecimalFormat formato = new DecimalFormat("#.##");
+        Mensaje.setText("");
+       //Selecciono resolverla por medio del metodo de la formula de vienna
+            //declaracion de mi areglo a utilizar para mi ecuacion cuadratica y de mi raiz cuadrada
+	float raiz=0;
+	float[] ecuacion = new float[4];
+            //Declaracion de variables para guardar las respuestas
+	float respuesta1=0;
+	float respuesta2=0;
+        
+        ecuacion[0]=Float.parseFloat(A.getText());
+        ecuacion[1]=Float.parseFloat(B.getText());
+        ecuacion[2]=Float.parseFloat(C.getText());
+        
+        Mensaje.append("Usted selecciono resolver su ecuacion cuadratica por medio de la Formula de vienna");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("Para que funcione correctamente su ecuacion debe de ser de la forma aX^2 + bX + c = d");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        
+        //calculo de las Respuestas
+	raiz=(float) sqrt((ecuacion[1]*ecuacion[1])+(-4*ecuacion[0]*ecuacion[2]));
+	respuesta1=((-ecuacion[1]+raiz)/(2*ecuacion[0]));
+	respuesta2=((-ecuacion[1]-raiz)/(2*ecuacion[0]));
+				
+        Mensaje.append("Su ecuacion cuadratica original es ");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append(ecuacion[0]+"X^2 "+ecuacion[1]+"X "+ecuacion[2]);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append("X  = ("+-ecuacion[1]+" mas/menos Raiz cuadrada de ("+ecuacion[1]+" al cuadrado) + (-4 * "+ecuacion[0]+" * "+ecuacion[2]+"))");//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append("	dividido 2 * "+ecuacion[0]);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append(System.getProperty("line.separator"));
+        
+        Mensaje.append("X  = ("+-ecuacion[1]+" mas/menos Raiz cuadrada de ("+ecuacion[1]*ecuacion[1]+") + ("+-4*ecuacion[0]*ecuacion[2]+"))"+"	dividido "+2*ecuacion[0]);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append(System.getProperty("line.separator"));
+        
+        
+        Mensaje.append("X  = ("+-ecuacion[1]+" mas/menos Raiz cuadrada de ("+ecuacion[1]*ecuacion[1]+(-4*ecuacion[0]*ecuacion[2])+"))"+"	dividido "+2*ecuacion[0]);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        Mensaje.append(System.getProperty("line.separator"));
+        
+        Mensaje.append("X  = ("+-ecuacion[1]+" mas/menos Raiz cuadrada de ("+raiz+"))"+"	dividido "+2*ecuacion[0]);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        
+        Mensaje.append("Esta es la Respuesta #1 "+respuesta1);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        
+        Mensaje.append("Esta es la Respuesta #2 "+respuesta2);//Envio de informacion a la ventana donde mostraremos la solucion
+        Mensaje.append(System.getProperty("line.separator"));
+        
+        
+      
+        Resultado_1.setText(formato.format(respuesta1)); //Setea el valor en el respectivo espacio al que pertenence
+        Resultado_2.setText(formato.format(respuesta2)); //Setea el valor en el respectivo espacio al que pertenence
+   
+   } 
     
     
     

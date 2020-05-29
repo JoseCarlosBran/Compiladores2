@@ -219,6 +219,7 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         Procedimientos procedimiento= new Procedimientos();
         try {
+            
             procedimiento.ECUACION_SIMULTANEA_SUSTITUCION(A11, A12, A13, A21, A22, A23, B11, B12, B13, B21, B22, B23, X, Y, Mensaje);
         } catch (InterruptedException ex) {
             Logger.getLogger(Ecuaciones_Simultaneas_2x2.class.getName()).log(Level.SEVERE, null, ex);
@@ -229,6 +230,8 @@ public class Ecuaciones_Simultaneas_2x2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         Procedimientos procedimiento= new Procedimientos();
         try {
+            B13.setText("");
+            B23.setText("");
             procedimiento.ECUACION_SIMULTANEA_MATRIZ_INVERSA(A11, A12, A13, A21, A22, A23, B11, B12, B21, B22, X, Y, Mensaje);
         } catch (InterruptedException ex) {
             Logger.getLogger(Ecuaciones_Simultaneas_2x2.class.getName()).log(Level.SEVERE, null, ex);

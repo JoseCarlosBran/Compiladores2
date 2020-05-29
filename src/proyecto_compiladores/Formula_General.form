@@ -31,11 +31,11 @@
                       <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="A12" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="a" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="A13" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="b" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="A14" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="c" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       <Component id="Resultado_1" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -43,8 +43,10 @@
                       <EmptySpace min="-2" pref="287" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
+                      <Component id="formula" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       <Component id="jButton1" min="-2" pref="91" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="320" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -55,19 +57,22 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="A12" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="A13" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="a" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="b" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="A14" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="c" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Resultado_1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Resultado_2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="306" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="21" max="32767" attributes="0"/>
+              <EmptySpace pref="35" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="formula" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -78,9 +83,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Resultado_1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="A12">
+    <Component class="javax.swing.JTextField" name="a">
     </Component>
-    <Component class="javax.swing.JTextField" name="A13">
+    <Component class="javax.swing.JTextField" name="b">
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
 
@@ -94,7 +99,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="A14">
+    <Component class="javax.swing.JTextField" name="c">
     </Component>
     <Component class="javax.swing.JTextField" name="Resultado_2">
       <Events>
@@ -107,6 +112,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="formula">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Formula_General"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="formulaActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

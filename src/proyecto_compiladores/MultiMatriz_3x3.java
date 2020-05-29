@@ -275,11 +275,14 @@ public class MultiMatriz_3x3 extends javax.swing.JFrame {
     private void Multiplicar_MatrizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Multiplicar_MatrizActionPerformed
         // TODO add your handling code here:
         Procedimientos procedimiento= new Procedimientos();
+        
         try {
             procedimiento.MULTI_MATRIZ(A11, A12, A13, A21, A22, A23, A31, A32, A33, B11, B12, B13, B21, B22, B23, B31, B32, B33, C11, C12, C13, C21, C22, C23, C31, C32, C33, jTextArea1);
+            //procedimiento.MULTI_MATRIZ(A11, A12, A21, A22, B11, B12, B21, B22, C11, C12, C21, C22, jTextArea1);
         } catch (InterruptedException ex) {
             Logger.getLogger(MultiMatriz_3x3.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }//GEN-LAST:event_Multiplicar_MatrizActionPerformed
 
     /**

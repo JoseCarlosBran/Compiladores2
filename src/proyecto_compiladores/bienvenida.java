@@ -120,7 +120,7 @@ public class bienvenida extends javax.swing.JFrame {
             }
         });
 
-        jButton10.setText("FORMULA_GENERAL");
+        jButton10.setText("Ecuaciones_Cuadraticas");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
