@@ -35,7 +35,7 @@ public class bienvenida extends javax.swing.JFrame {
         jPanel1 = new fondoPanel1();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        Salir = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -67,9 +67,14 @@ public class bienvenida extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(153, 153, 153));
-        jButton2.setFont(new java.awt.Font("AR DELANEY", 1, 24)); // NOI18N
-        jButton2.setText("SALIR");
+        Salir.setBackground(new java.awt.Color(153, 153, 153));
+        Salir.setFont(new java.awt.Font("AR DELANEY", 1, 24)); // NOI18N
+        Salir.setText("SALIR");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("RESTA_MATRIZ_2x2");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -184,7 +189,7 @@ public class bienvenida extends javax.swing.JFrame {
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(282, 282, 282)
-                        .addComponent(jButton2)))
+                        .addComponent(Salir)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -213,7 +218,7 @@ public class bienvenida extends javax.swing.JFrame {
                     .addComponent(jButton12)
                     .addComponent(Factorial))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(Salir)
                 .addGap(27, 27, 27))
         );
 
@@ -356,6 +361,12 @@ public class bienvenida extends javax.swing.JFrame {
         pantalla.setLocationRelativeTo(null);//coloca el jframe al centro de la pantalla del Usuario
     }//GEN-LAST:event_FactorialActionPerformed
 
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+        
+    }//GEN-LAST:event_SalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -394,11 +405,11 @@ public class bienvenida extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Factorial;
+    private javax.swing.JButton Salir;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
